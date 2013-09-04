@@ -1,7 +1,7 @@
 class CategoriesController < ApplicationController
 
   def index
-    @categories = Category.includes(:images)
+    @categories = Category.order('created_at DESC')#includes(:images)
   end
 
   def show

@@ -1,1 +1,5 @@
-categories index
+.categories
+  - @categories.each do |category|
+    .category
+      = category.id
+      = category.title

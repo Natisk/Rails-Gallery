@@ -1,4 +1,7 @@
 Tits::Application.routes.draw do
+
+  root to: 'categories#index'
+
   devise_for :admin_users, ActiveAdmin::Devise.config
   ActiveAdmin.routes(self)
 
@@ -63,7 +66,5 @@ Tits::Application.routes.draw do
   # match ':controller(/:action(/:id))(.:format)'
 
   resources :categories, only: [:index, :show]
-
-  root to: 'categories#index'
 
 end
