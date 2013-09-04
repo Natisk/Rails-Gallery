@@ -1,7 +1,7 @@
 class CategoriesController < ApplicationController
 
   def index
-    @categories = Category.includes(:image)
+    @categories = Category.includes(:images)
   end
 
   def show
