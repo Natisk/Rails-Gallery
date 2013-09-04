@@ -13,7 +13,7 @@
 
 ActiveRecord::Schema.define(:version => 20130904133932) do
 
-  create_table "category", :force => true do |t|
+  create_table "categories", :force => true do |t|
     t.string   "title"
     t.datetime "created_at", :null => false
     t.datetime "updated_at", :null => false
