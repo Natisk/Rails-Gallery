@@ -10,5 +10,6 @@ class User < ActiveRecord::Base
   attr_accessible :email, :name, :password, :password_confirmation, :remember_me
 
   has_many :likes
+  has_many :comments
 
 end

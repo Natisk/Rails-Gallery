@@ -5,7 +5,8 @@ class CategoriesController < ApplicationController
   end
 
   def show
-    @category = Category.includes(:images).where('title = :title', title: params[:title]).first
+    @category = Category.where('title = :title', title: params[:title]).first
+    @images = Image.where('category_id = :id', id: @category.id).page(params[:page]).per(1)
   end
 
 end

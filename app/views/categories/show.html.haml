@@ -1,4 +1,5 @@
 = "Category title #{@category.title}"
-- unless @category.images.empty?
-  - @category.images.each do |category_img|
+- unless @images.empty?
+  - @images.each do |category_img|
     = image_tag category_img.img_name.url(:thumb)
+= paginate @images
