@@ -1,6 +1,8 @@
 class Like < ActiveRecord::Base
 
-  belongs_to :user
-  belongs_to :image
+  attr_accessible :user_id, :image_id
+
+  belongs_to :user, counter_cache: true
+  belongs_to :image, counter_cache: true
 
 end

@@ -1,5 +1,7 @@
 .categories
   - @categories.each do |category|
     .category
-      = category.id
-      = category.title
+      = link_to category.title, special_category_path(category.title)
+      - unless category.images.empty?
+        - category.images.each do |cat_img|
+          = image_tag cat_img.img_name.url(:thumb)
