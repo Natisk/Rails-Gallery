@@ -3,8 +3,8 @@ ActiveAdmin.register Image do
   index do
     selectable_column
     column :img_name do |category|
-      unless category.image.blank?
-        image_tag(category.image.img_name.url, width: 50, height: 50 )
+      unless category.img_name.blank?
+        image_tag(category.img_name.url, width: 50, height: 50 )
       end
     end
     column :id
@@ -14,13 +14,14 @@ ActiveAdmin.register Image do
 
   show do
     panel 'Image Details' do
-      attributes_table_for category do
+      attributes_table_for image do
         #row :image do |category|
         #  unless category.image.blank?
         #    image_tag(category.image.img_name.url)
         #  end
         #end
         row :title
+        row :img_name
       end
     end
   end
@@ -29,10 +30,7 @@ ActiveAdmin.register Image do
     f.semantic_errors :base
     f.inputs 'Category', multipart: true do
       f.input :title
-      f.inputs for: [:images, f.object.img_name || Image.new] do |file|
-        file.input :img_name, as: :file, hint: file.object.img_name.nil? ? f.template.content_tag(:span, 'no map yet') : file.template.image_tag(file.object.img_name.url)
-        file.input :remote_img_name_url, as: :url
-      end
+      f.input :img_name, as: :file, hint: f.object.img_name.nil? ? f.template.content_tag(:span, 'no map yet') : f.template.image_tag(f.object.img_name.url(:thumb))
     end
     f.actions
   end

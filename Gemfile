@@ -13,6 +13,7 @@ gem 'kaminari'
 
 # Use for upload files
 gem 'carrierwave'
+gem 'rmagick', '~>2.13.2', require: 'RMagick'
 
 gem 'devise'
 gem 'formtastic'
