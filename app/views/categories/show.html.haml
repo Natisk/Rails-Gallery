@@ -1,3 +1,4 @@
-= "Category show #{object_id}"
-%br
 = "Category title #{@category.title}"
+- unless @category.images.empty?
+  - @category.images.each do |category_img|
+    = image_tag category_img.img_name.url(:thumb)
