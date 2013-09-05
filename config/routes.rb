@@ -8,6 +8,10 @@ Tits::Application.routes.draw do
   devise_for :users
   ActiveAdmin.routes(self)
 
+  resources :images do
+    resources :comments
+  end
+
   get 'categories' => 'categories#index'
   get 'categories/:title' => 'categories#show', as: :special_category
 
