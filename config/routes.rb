@@ -16,4 +16,7 @@ Tits::Application.routes.draw do
   get 'categories/:title' => 'categories#show', as: :special_category
   get 'comments' => 'comments#index', as: :comments
 
+  #post 'like-up' =>  'likes#create'
+  #post 'like-down' => ''
+
 end
