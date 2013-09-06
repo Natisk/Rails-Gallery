@@ -1,17 +1,14 @@
-= form_for [@image, @comment], url: {action: 'create'} do |f|
+= form_for [@image, @comment] do |f|
   - if @comment.errors.any?
     #error_explanation
       %h2
         = pluralize(@comment.errors.count, 'error')
-        prohibited this blog_comment from being saved:
+        prohibited this comment from being saved:
       %ul
         - @comment.errors.full_messages.each do |msg|
           %li= msg
   .field
-    - unless current_user
-      = 'Guest'
-    - else
-      = current_user.email
+    = current_user.email
   .field
     = f.label :body
     %br/

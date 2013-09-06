@@ -1,2 +1,9 @@
 = image_tag @image.img_name.url
-= render partial: 'comments/form'
+.image_comments
+  - @image.comments.each do |img_comment|
+    - if img_comment.user
+      = img_comment.user.name
+    = img_comment.body
+- if user_signed_in?
+  .comments_form
+    = render partial: 'comments/form'

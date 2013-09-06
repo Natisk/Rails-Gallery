@@ -4,4 +4,6 @@ class Category < ActiveRecord::Base
 
   has_many :images, dependent: :destroy
 
+  validates :title, presence: true, length: {minimum: 2, maximum: 255}
+
 end
