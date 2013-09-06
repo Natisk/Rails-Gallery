@@ -1,4 +1,11 @@
 //= require_self
-//= require_bootstrap
+//= require bootstrap.min
 //= require_tree
 
+body {
+  padding: 60px 0 0 0;
+}
+
+#user_nav {
+  color: #fff;
+}

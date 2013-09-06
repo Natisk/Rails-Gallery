@@ -14,5 +14,6 @@ Tits::Application.routes.draw do
 
   get 'categories' => 'categories#index'
   get 'categories/:title' => 'categories#show', as: :special_category
+  get 'comments' => 'comments#index', as: :comments
 
 end
