@@ -5,8 +5,7 @@ class ImagesController < ApplicationController
   end
 
   def show
-    @image = Image.includes(:comments).find(params[:id])
-    @comments = Comment.where('image_id = :id', id: @image.id)
+    @image = Image.includes(:comments, :likes).find(params[:id])
     @comment = Comment.new(params[:comment])
   end
 
