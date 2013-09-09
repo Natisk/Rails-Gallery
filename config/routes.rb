@@ -1,6 +1,6 @@
 Tits::Application.routes.draw do
 
-  root to: 'categories#index'
+  root to: 'images#index'
 
   devise_for :admin_users, ActiveAdmin::Devise.config
   ActiveAdmin.routes(self)
