@@ -33,8 +33,9 @@ ActiveRecord::Schema.define(:version => 20130905163033) do
 
   create_table "categories", :force => true do |t|
     t.string   "title"
-    t.datetime "created_at", :null => false
-    t.datetime "updated_at", :null => false
+    t.integer  "images_count", :default => 0
+    t.datetime "created_at",                  :null => false
+    t.datetime "updated_at",                  :null => false
   end
 
   create_table "comments", :force => true do |t|
@@ -56,8 +57,8 @@ ActiveRecord::Schema.define(:version => 20130905163033) do
   end
 
   create_table "likes", :force => true do |t|
-    t.string   "user_id"
-    t.string   "image_id"
+    t.integer  "user_id"
+    t.integer  "image_id"
     t.datetime "created_at", :null => false
     t.datetime "updated_at", :null => false
   end

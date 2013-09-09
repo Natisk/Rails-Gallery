@@ -1,7 +1,7 @@
 class ImagesController < ApplicationController
 
   def index
-    @images = Image.order('likes_count DESC').page(params[:page]).per(3)
+    @images = Image.page(params[:page]).per(5)
   end
 
   def show

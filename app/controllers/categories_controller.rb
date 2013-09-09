@@ -6,7 +6,7 @@ class CategoriesController < ApplicationController
 
   def show
     @category = Category.where('title = :title', title: params[:title]).first
-    @images = Image.where('category_id = :id', id: @category.id).page(params[:page]).per(1)
+    @images = Image.where('category_id = :id', id: @category.id).page(params[:page]).per(5)
   end
 
 end

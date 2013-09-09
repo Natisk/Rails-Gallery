@@ -1,22 +1,18 @@
 .for_image
   = image_tag @image.img_name.url, id: "#{@image.id}"
+.image_likes
+  = @image.likes_count
 .image_comments
   - @image.comments.each do |img_comment|
     - if img_comment.user
       = img_comment.user.name
     = img_comment.body
-.user_names
-  - @image.likes.each do |like|
-    = like.user.id
-.current_user_id
-  = current_user.id
-.check
-  = @image.likes.first[:user_id]
-  - if @image.likes.any? { |like| like[:user_id] == '1'}
-    #like_down.btn
-      %i.glyphicon.glyphicon-thumbs-down
+- if user_signed_in?
+  - if @image.likes.any? { |like| like[:user_id] == current_user.id}
+    #like_down.btn.btn-danger
+      DisLike
   - else
-    #like_up.btn
-      %i.glyphicon.glyphicon-thumbs-up
+    #like_up.btn.btn-primary
+      Like
   .comments_form
     = render partial: 'comments/form'
