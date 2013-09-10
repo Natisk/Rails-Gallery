@@ -1,4 +1,4 @@
 .categories
   - @categories.each do |category|
     .category
-      = link_to category.title, special_category_path(category.title)
+      = link_to category.title, special_category_path(category.title), class: 'btn btn-primary categories'

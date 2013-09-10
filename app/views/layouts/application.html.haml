@@ -26,14 +26,19 @@
             %span or
             = link_to 'Sign in', new_user_session_path
     .content.row
-      - if flash[:error]
-        %p.alert.alert-error
-          = flash.now[:error]
-      - if flash[:notice]
-        %p.alert.alert-success
-          = flash.now[:notice]
-      - if flash[:alert]
-        %p.alert.alert-info
-          = flash.now[:alert]
-      = yield
-    %footer footer
+      .main_content
+        - if flash[:error]
+          %p.alert.alert-error
+            = flash.now[:error]
+        - if flash[:notice]
+          %p.alert.alert-success
+            = flash.now[:notice]
+        - if flash[:alert]
+          %p.alert.alert-info
+            = flash.now[:alert]
+        = yield
+    %footer
+      .copy
+        = "© #{Time.now.strftime('%Y')} Natisk, Inc."
+      .org
+        RoRteam
