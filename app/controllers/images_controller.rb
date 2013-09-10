@@ -5,7 +5,7 @@ class ImagesController < ApplicationController
   end
 
   def show
-    @image = Image.includes(:comments, :likes).find(params[:id])
+    @image = Image.includes(comments: :user, likes: :user).find(params[:id])
     @comment = Comment.new(params[:comment])
   end
 

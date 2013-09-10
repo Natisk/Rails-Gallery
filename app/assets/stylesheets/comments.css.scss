@@ -1,0 +1,17 @@
+.img_comment {
+  margin: 0 0 10px 0;
+}
+
+.img_comment .comment_user_name {
+  border-radius: 5px 5px 0 0;
+}
+
+.img_comment .comment_body {
+  border-radius: 0 0 5px 5px;
+}
+
+.img_comment .comment_user_name,
+.img_comment .comment_body {
+  background: #dddddd;
+  padding: 5px 10px 5px 10px;
+}

@@ -1,8 +1,8 @@
 .for_image
   = image_tag @image.img_name.url, id: "#{@image.id}"
 .image_likes
-  = @image.likes_count
-.image_comments
+  = "Total likes - #{@image.likes_count}"
+.image_comments.col-lg-4
   - @image.comments.each do |img_comment|
     .img_comment
       .comment_user_name
