@@ -21,6 +21,8 @@
             = current_user.email
             %span Not you?
             = link_to 'Sign out', destroy_user_session_path, :method => :delete
+            %span or
+            = link_to 'Edit profile', edit_user_registration_path
           - else
             = link_to 'Sign up', new_user_registration_path
             %span or
@@ -36,7 +38,8 @@
         - if flash[:alert]
           %p.alert.alert-info
             = flash.now[:alert]
-        = yield
+        .col-lg-12
+          = yield
     %footer
       .copy
         = "© #{Time.now.strftime('%Y')} Natisk, Inc."

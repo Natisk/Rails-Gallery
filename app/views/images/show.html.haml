@@ -4,9 +4,11 @@
   = @image.likes_count
 .image_comments
   - @image.comments.each do |img_comment|
-    - if img_comment.user
-      = img_comment.user.name
-    = img_comment.body
+    .img_comment
+      .comment_user_name
+        = img_comment.user.name
+      .comment_body
+        = img_comment.body
 - if user_signed_in?
   - if @image.likes.any? { |like| like[:user_id] == current_user.id}
     #like_down.btn.btn-danger
