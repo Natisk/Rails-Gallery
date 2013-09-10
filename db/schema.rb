@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20130910155310) do
+ActiveRecord::Schema.define(:version => 20130910173354) do
 
   create_table "admin_users", :force => true do |t|
     t.string   "email",                  :default => "", :null => false
@@ -69,6 +69,8 @@ ActiveRecord::Schema.define(:version => 20130910155310) do
     t.datetime "created_at",  :null => false
     t.datetime "updated_at",  :null => false
   end
+
+  add_index "subscribes", ["category_id", "user_id"], :name => "index_subscribes_on_category_id_and_user_id", :unique => true
 
   create_table "users", :force => true do |t|
     t.string   "email",                  :default => "",      :null => false

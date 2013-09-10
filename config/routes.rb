@@ -18,5 +18,7 @@ Tits::Application.routes.draw do
 
   post 'like-up' =>  'likes#create'
   post 'like-down' => 'likes#destroy'
+  post 'subscribe' => 'categories#subscribe'
+  post 'unsubscribe' => 'categories#unsubscribe'
 
 end
