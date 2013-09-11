@@ -1,6 +1,11 @@
-.categories
+.categories_all
   - @categories.each do |category|
     .category
       = link_to category.title, special_category_path(category.title), class: 'btn btn-primary categories'
-      %div{id: "#{category.id}", class: 'subscribe'}
-        subscribe
+      - if user_signed_in?
+        - if category.subscribes.any? {|subscribe| subscribe.user_id == current_user.id}
+          %div{id: "#{category.id}", class: 'unsubscribe'}
+            unsubscribe
+        - else
+          %div{id: "#{category.id}", class: 'subscribe'}
+            subscribe
