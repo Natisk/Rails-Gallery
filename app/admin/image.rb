@@ -1,5 +1,7 @@
 ActiveAdmin.register Image do
 
+  filter :title, as: :string
+
   index do
     selectable_column
     column :id

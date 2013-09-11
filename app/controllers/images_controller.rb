@@ -9,4 +9,12 @@ class ImagesController < ApplicationController
     @comment = Comment.new(params[:comment])
   end
 
+  def create
+    @recipients = Category.where('id = :id', id: params[:category_id]).first.users
+    @image = Image.new
+    if @image.save
+      UserMailer.send_new_images
+    end
+  end
+
 end
