@@ -1,6 +1,6 @@
 class UserMailer < ActionMailer::Base
 
-  default :from => 'emailfaceit@gmail.com'
+  default from: Settings.mailer.user_name
 
   def self.send_new_images
     category = Category.where('id = :id', id: params[:category_id]).first
