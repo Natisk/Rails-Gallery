@@ -50,3 +50,6 @@ group :test do
   gem 'simplecov', require: false, group: :test
 end
 
+gem 'resque', require: 'resque/server'
+gem 'resque-scheduler'
+

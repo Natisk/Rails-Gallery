@@ -14,10 +14,7 @@ class Image < ActiveRecord::Base
   validates :img_name, presence: true
 
   def user_sender
-    category = Category.includes(:users).find(self.category_id)
-    category.users.each do |recipient|
-      UserMailer.new_images(recipient).deliver
-    end
+    Resque.enqueue(SubscriptionMailer, self.id)
   end
 
 end

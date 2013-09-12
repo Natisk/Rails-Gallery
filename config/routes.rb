@@ -12,6 +12,8 @@ Tits::Application.routes.draw do
     resources :comments
   end
 
+  mount Resque::Server, at: '/resque'
+
   get 'categories' => 'categories#index'
   get 'categories/:title' => 'categories#show', as: :special_category
   get 'comments' => 'comments#index', as: :comments
