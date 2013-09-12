@@ -5,6 +5,8 @@
     = devise_error_messages!
     .form-group
       = f.email_field :email, autofocus: true, class: 'form-control', placeholder: 'Email'
+    .form-group
+      = f.text_field :name, autofocus: true, class: 'form-control', placeholder: 'Email'
     - if devise_mapping.confirmable? && resource.pending_reconfirmation?
       .form-group
         Currently waiting confirmation for: #{resource.unconfirmed_email}
