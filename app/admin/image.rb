@@ -37,4 +37,12 @@ ActiveAdmin.register Image do
     f.actions
   end
 
+  controller do
+
+    def scoped_collection
+      Image.includes(:category).page(params[:page]).per(10)
+    end
+
+  end
+
 end
