@@ -1,11 +1,12 @@
-.categories_all
-  - @categories.each do |category|
-    .category
-      = link_to category.title, special_category_path(category.title), class: 'btn btn-primary categories'
-      - if user_signed_in?
-        - if category.subscribes.any? {|subscribe| subscribe.user_id == current_user.id}
-          %div{id: "#{category.id}", class: 'unsubscribe'}
-            unsubscribe
-        - else
-          %div{id: "#{category.id}", class: 'subscribe'}
-            subscribe
+.row
+  .categories_all.col-lg-3
+    - @categories.each do |category|
+      .category.row
+        = link_to category.title, special_category_path(category.title), class: 'btn btn-primary categories col-lg-12'
+        - if user_signed_in?
+          - if category.subscribes.any? {|subscribe| subscribe.user_id == current_user.id}
+            %div{id: "#{category.id}", class: 'unsubscribe'}
+              unsubscribe
+          - else
+            %div{id: "#{category.id}", class: 'subscribe'}
+              subscribe

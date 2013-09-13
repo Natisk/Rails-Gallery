@@ -1,4 +1,41 @@
-.categories {
-  width: 200px;
+.categories_all .category {
   margin: 0 0 10px 0;
+}
+
+.category {
+  width: 270px;
+  position: relative;
+}
+
+.category .subscribe,
+.category .unsubscribe {
+  position: absolute;
+  padding: 0 5px 0 5px;
+  height: 20px;
+  bottom: 10px;
+  right: 5px;
+  color: #fff;
+  border-radius: 3px 3px 3px 3px;
+  cursor: pointer;
+}
+
+.category .subscribe:hover,
+.category .unsubscribe:hover {
+  color: black;
+}
+
+.category .categories {
+  text-align: left;
+}
+
+.category .categories:first-letter {
+  text-transform: uppercase;
+}
+
+.category .subscribe {
+  background: forestgreen;
+}
+
+.category .unsubscribe {
+  background: red;
 }
