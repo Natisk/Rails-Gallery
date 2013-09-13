@@ -27,21 +27,23 @@
           - else
             = link_to 'Sign up', new_user_registration_path, class: 'btn btn-primary'
             = link_to 'Sign in', new_user_session_path, class: 'btn btn-primary'
-            %span.facebook_login or
+            %span.facebook_login or Sign in with
             = link_to user_omniauth_authorize_path(:facebook) do
-              Sign in with
               = image_tag 'facebook.png', with: 32
     .content.row
       .main_content
         - if flash[:error]
-          %p.alert.alert-error
-            = flash.now[:error]
+          .col-lg-12
+            %p.alert.alert-error
+              = flash.now[:error]
         - if flash[:notice]
-          %p.alert.alert-success
-            = flash.now[:notice]
+          .col-lg-12
+            %p.alert.alert-success
+              = flash.now[:notice]
         - if flash[:alert]
-          %p.alert.alert-info
-            = flash.now[:alert]
+          .col-lg-12
+            %p.alert.alert-info
+              = flash.now[:alert]
         .col-lg-12
           = yield
     %footer

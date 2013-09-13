@@ -15,3 +15,30 @@
   background: #dddddd;
   padding: 5px 10px 5px 10px;
 }
+
+.comment {
+  margin: 0 0 30px 0;
+}
+
+.comment_top {
+  overflow: hidden;
+}
+
+.comment_top .comment_name,
+.comment_top .comment_date {
+  float: left;
+}
+
+.comment_top .comment_name {
+  font-weight: bold;
+  margin: 0 20px 0 0;
+}
+
+.comment_top .comment_date {
+  font-size: 11px;
+  margin: 4px 0 0 0;
+}
+
+.comment_top .comment_image {
+  float: right;
+}

@@ -1,5 +1,7 @@
-- @images.each do |img|
-  = link_to image_path(img) do
-    = image_tag img.img_name.url(:thumb)
+%h1 Images
+.image_tits
+  - @images.each do |img|
+    = link_to image_path(img) do
+      = image_tag img.img_name.url(:thumb)
 .pager_images
   = paginate @images
