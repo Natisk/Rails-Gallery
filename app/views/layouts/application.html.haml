@@ -18,8 +18,9 @@
         #user_nav.pull-right
           - if user_signed_in?
             %span Signed in as
-            = current_user.email
-            %span Not you?
+            %i
+              %b
+                = current_user.name
             = link_to 'Sign out', destroy_user_session_path, :method => :delete, class: 'btn btn-primary'
             %span or
             = link_to 'Edit profile', edit_user_registration_path, class: 'btn btn-primary'
