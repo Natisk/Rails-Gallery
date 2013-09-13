@@ -20,13 +20,16 @@
             %span Signed in as
             = current_user.email
             %span Not you?
-            = link_to 'Sign out', destroy_user_session_path, :method => :delete
+            = link_to 'Sign out', destroy_user_session_path, :method => :delete, class: 'btn btn-primary'
             %span or
-            = link_to 'Edit profile', edit_user_registration_path
+            = link_to 'Edit profile', edit_user_registration_path, class: 'btn btn-primary'
           - else
-            = link_to 'Sign up', new_user_registration_path
-            %span or
-            = link_to 'Sign in', new_user_session_path
+            = link_to 'Sign up', new_user_registration_path, class: 'btn btn-primary'
+            = link_to 'Sign in', new_user_session_path, class: 'btn btn-primary'
+            %span.facebook_login or
+            = link_to user_omniauth_authorize_path(:facebook) do
+              Sign in with
+              = image_tag 'facebook.png', with: 32
     .content.row
       .main_content
         - if flash[:error]
