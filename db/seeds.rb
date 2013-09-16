@@ -10,7 +10,7 @@ Dir["#{Rails.root}/db/data_seed/*"].each do |dir|              #Pick the folder 
   cat = Category.create(title: "#{dir.rpartition('/')[2]}")    #Create category according to folder name
   puts "Create category: #{dir.rpartition('/')[2]}\n"
   Dir["#{dir}/*"].each do |image|                              #Get hte images from each folder
-    print image.rpartition('/')[2] + ', '
+    puts image.rpartition('/')[2] + ', '
     img_name = image.rpartition('/')[2].rpartition('.')[0]     #Get the file name for db column
   cat.images.create(title: "#{cat.title} #{img_name}",         #Create image
                       img_name: File.open(image))
