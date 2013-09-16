@@ -1,7 +1,8 @@
 %h1 Images
-.image_tits
-  - @images.each do |img|
-    = link_to image_path(img) do
-      = image_tag img.img_name.url(:thumb)
+.row
+  .image_tits.col-lg-8
+    - @images.each do |img|
+      = link_to image_path(img) do
+        = image_tag img.img_name.url(:thumb)
 .pager_images
   = paginate @images, window: 2
