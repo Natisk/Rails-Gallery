@@ -4,4 +4,4 @@
     = link_to image_path(img) do
       = image_tag img.img_name.url(:thumb)
 .pager_images
-  = paginate @images
+  = paginate @images, window: 2
