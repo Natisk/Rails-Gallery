@@ -1,7 +1,22 @@
 $(document).ready ->
 
-  $('.subscribe').click ->
-    $.post '/subscribe', {category_id: $(this).attr 'id'}
+  $(document).on "click", ".subscribe", (event) ->
+    $.ajax
+      type: 'post'
+      url: '/subscribe'
+      data: {category_id: $('.subscribe').attr 'id'}
+      success: ->
+        $(event.target).text('unsubscribe')
+        $(event.target).addClass 'unsubscribe'
+        $(event.target).removeClass 'subscribe'
 
-  $('.unsubscribe').click ->
-    $.post '/unsubscribe', {category_id: $(this).attr 'id'}
+  $(document).on "click", ".unsubscribe", (event) ->
+    $.ajax
+      type: 'post'
+      url: '/unsubscribe'
+      data: {category_id: $('.unsubscribe').attr 'id'}
+      success: ->
+        $(event.target).text('subscribe')
+        $(event.target).addClass 'subscribe'
+        $(event.target).removeClass 'unsubscribe'
+
