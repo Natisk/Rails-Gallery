@@ -11,7 +11,8 @@ class LikesController < ApplicationController
   end
 
   def destroy
-    @like = Like.where('user_id = :user_id AND image_id = :image_id', user_id: current_user.id, image_id: params[:image_id]).first
+    @like = Like.where('user_id = :user_id AND image_id = :image_id', user_id: current_user.id,
+                       image_id: params[:image_id]).first
     @like.destroy
     render nothing: true
   end
