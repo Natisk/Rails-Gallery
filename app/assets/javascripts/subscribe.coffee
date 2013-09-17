@@ -4,7 +4,7 @@ $(document).ready ->
     $.ajax
       type: 'post'
       url: '/subscribe'
-      data: {category_id: $('.subscribe').attr 'id'}
+      data: {category_id: event.target.id}
       success: ->
         $(event.target).text('unsubscribe')
         $(event.target).addClass 'unsubscribe'
@@ -14,7 +14,7 @@ $(document).ready ->
     $.ajax
       type: 'post'
       url: '/unsubscribe'
-      data: {category_id: $('.unsubscribe').attr 'id'}
+      data: {category_id: event.target.id}
       success: ->
         $(event.target).text('subscribe')
         $(event.target).addClass 'subscribe'
