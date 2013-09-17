@@ -6,7 +6,7 @@ Tits::Application.routes.draw do
   ActiveAdmin.routes(self)
 
   devise_for :users,
-             controllers: {omniauth_callbacks: 'users/omniauth_callbacks'}
+             controllers: {omniauth_callbacks: 'users/omniauth_callbacks',  registrations: 'registrations'}
   ActiveAdmin.routes(self)
 
   resources :images do
