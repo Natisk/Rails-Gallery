@@ -17,10 +17,6 @@
     .form-group
       = f.password_field :password_confirmation, class: 'form-control', placeholder: 'Password confirmation'
     .form-group
-      %i (we need your current password to confirm your changes)
-      %br
-      = f.password_field :current_password, class: 'form-control', placeholder: 'Current password'
-    .form-group
       = f.submit 'Update', class: 'btn btn-default'
   %h3 Cancel my account
   %p
