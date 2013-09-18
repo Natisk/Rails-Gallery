@@ -4,7 +4,8 @@ class CreateEvents < ActiveRecord::Migration
     create_table :events do |t|
       t.integer :user_id
       t.string :user_action
-      t.date :created_at
+      t.integer :related_id
+      t.datetime :created_at
     end
   end
 

@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20130918093924) do
+ActiveRecord::Schema.define(:version => 20130918104826) do
 
   create_table "admin_users", :force => true do |t|
     t.string   "email",                  :default => "", :null => false
@@ -47,10 +47,10 @@ ActiveRecord::Schema.define(:version => 20130918093924) do
   end
 
   create_table "events", :force => true do |t|
-    t.integer "user_id"
-    t.string  "user_action"
-    t.date    "created_at"
-    t.integer "related_id"
+    t.integer  "user_id"
+    t.string   "user_action"
+    t.integer  "related_id"
+    t.datetime "created_at"
   end
 
   create_table "images", :force => true do |t|
@@ -69,6 +69,8 @@ ActiveRecord::Schema.define(:version => 20130918093924) do
     t.datetime "created_at", :null => false
     t.datetime "updated_at", :null => false
   end
+
+  add_index "likes", ["image_id", "user_id"], :name => "index_likes_on_image_id_and_user_id", :unique => true
 
   create_table "subscribes", :force => true do |t|
     t.integer  "user_id"
