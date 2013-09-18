@@ -1,5 +1,7 @@
 ActiveAdmin.register Image do
 
+  config.per_page = 10
+
   filter :title, as: :string
 
   index do
@@ -40,7 +42,7 @@ ActiveAdmin.register Image do
   controller do
 
     def scoped_collection
-      Image.includes(:category).page(params[:page]).per(10)
+      Image.includes(:category)
     end
 
   end
