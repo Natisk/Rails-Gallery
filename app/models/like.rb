@@ -9,11 +9,11 @@ class Like < ActiveRecord::Base
   belongs_to :image, counter_cache: true
 
   def track_added_like
-    Event.create(user_id: self.user.id , related_id: self.id, user_action: 'like add')
+    Event.create(user_id: self.user.id , related_id: self.image.id, user_action: 'like add')
   end
 
   def track_deleted_like
-    Event.create(user_id: self.user.id , related_id: self.id, user_action: 'like del')
+    Event.create(user_id: self.user.id , related_id: self.image.id, user_action: 'like del')
   end
 
 end
