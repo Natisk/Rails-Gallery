@@ -1,11 +1,14 @@
 class ApplicationController < ActionController::Base
   protect_from_forgery
 
+  before_filter :save_user_link
+
   private
   def after_sign_out_path_for(resource_or_scope)
     if resource_class == AdminUser
       admin_user_session_path
     else
+      Event.create(user_id: current_user.id, related_id: current_user.id, user_action: 'logout')
       categories_path
     end
   end
@@ -14,7 +17,14 @@ class ApplicationController < ActionController::Base
     if resource_class == AdminUser
       admin_root_path
     else
+      Event.create(user_id: current_user.id, related_id: current_user.id, user_action: 'login')
       categories_path
+    end
+  end
+
+  def save_user_link
+    if user_signed_in?
+      VisitedLink.create(user_id: current_user.id, link: request.url)
     end
   end
 

@@ -1,5 +1,7 @@
 class LikesController < ApplicationController
 
+  before_filter :authenticate_user!, only: [:create, :destroy]
+
   def create
     @like = current_user.likes.new(image_id: params[:image_id])
     if @like.save
