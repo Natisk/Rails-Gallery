@@ -21,7 +21,7 @@ class CategoriesController < ApplicationController
     user_unsubscribe = Subscribe.where('user_id = :user_id AND category_id = :category_id', user_id: current_user.id, category_id: params[:category_id]).first
     if user_unsubscribe.destroy
       render nothing: true
-      Event.create(user_id: current_user.id, related_id: user_subscribe.category.id, user_action: 'unsubscribed')
+      Event.create(user_id: current_user.id, related_id: user_unsubscribe.category.id, user_action: 'unsubscribed')
     end
   end
 
