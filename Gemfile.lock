@@ -73,6 +73,7 @@ GEM
       coffee-script-source
       execjs
     coffee-script-source (1.6.3)
+    curb (0.8.4)
     database_cleaner (1.1.1)
     debug_inspector (0.0.2)
     devise (3.0.3)
@@ -275,6 +276,7 @@ DEPENDENCIES
   bootstrap-sass (~> 2.3.2.2)
   carrierwave
   coffee-rails (~> 3.2.1)
+  curb
   database_cleaner
   devise
   factory_girl_rails
