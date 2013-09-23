@@ -11,8 +11,7 @@ ActiveAdmin.register_page 'Image Parser' do
       @images << img['src']
     end
     puts @images
-    render partial: 'admin/parser/parse_url'
-    #render layout: 'active_admin'
+    render 'admin/image_parser/parse_url'
   end
 
   sidebar :tips do
@@ -22,8 +21,6 @@ ActiveAdmin.register_page 'Image Parser' do
   end
 
   content do
-    #div{link_to 'Parse', admin_image_parser_parse_url_path, method: :post}
-    #div{render partial: 'admin/parser/parse_url'}
     semantic_form_for :image_parser, url: admin_image_parser_parse_url_url, builder: ActiveAdmin::FormBuilder do |f|
       f.inputs 'Url to parse' do
         f.input :parse_link
