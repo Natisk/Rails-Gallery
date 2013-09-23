@@ -1,9 +1,18 @@
+require 'nokogiri'
+require 'open-uri'
+
 ActiveAdmin.register_page 'Image Parser' do
 
   page_action :parse_url, method: :post do
-    url = params[:parse_link]
+    @images = Array.new
+    url = params[:image_parser][:parse_link]
     page = Nokogiri::HTML(open(url))
-    images = page.css('img')['src']
+    page.css('img').each do |img|
+      @images << img['src']
+    end
+    puts @images
+    render partial: 'admin/parser/parse_url'
+    #render layout: 'active_admin'
   end
 
   sidebar :tips do
@@ -13,7 +22,9 @@ ActiveAdmin.register_page 'Image Parser' do
   end
 
   content do
-    semantic_form_for :image_parser, url: admin_image_parser_url, builder: ActiveAdmin::FormBuilder do |f|
+    #div{link_to 'Parse', admin_image_parser_parse_url_path, method: :post}
+    #div{render partial: 'admin/parser/parse_url'}
+    semantic_form_for :image_parser, url: admin_image_parser_parse_url_url, builder: ActiveAdmin::FormBuilder do |f|
       f.inputs 'Url to parse' do
         f.input :parse_link
       end
