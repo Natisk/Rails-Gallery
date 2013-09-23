@@ -1,6 +1,6 @@
-%p hey man
+%h3 Parse results
 - if @images
   %ul
     - @images.each do |img|
       %li
-        = img.to_s
+        %img{src: img.to_s}

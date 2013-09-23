@@ -5,10 +5,16 @@ ActiveAdmin.register_page 'Image Parser' do
 
   page_action :parse_url, method: :post do
     @images = Array.new
+    @categories = Category.all
     url = params[:image_parser][:parse_link]
     page = Nokogiri::HTML(open(url))
     page.css('img').each do |img|
-      @images << img['src']
+      if img['src'].include? ('http://')
+        @images << img['src']
+      else
+        site_root = url.split('/')[0] + '//' + url.split('/')[2]
+        @images << site_root + img['src']
+      end
     end
     puts @images
     render 'admin/image_parser/parse_url'
