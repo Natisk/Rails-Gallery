@@ -17,7 +17,17 @@ ActiveAdmin.register_page 'Image Parser' do
       end
     end
     puts @images
+    puts params.inspect
     render 'admin/image_parser/parse_url'
+  end
+
+  page_action :save_data, method: :post do
+    image = Image.new(params[:image])
+    if image.save
+      render 'admin/image_parser/parse_url'
+    else
+      render nothing: true
+    end
   end
 
   sidebar :tips do

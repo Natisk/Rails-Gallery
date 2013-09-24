@@ -35,6 +35,7 @@ ActiveAdmin.register Image do
       f.input :title
       f.input :img_name, as: :file,
               hint: f.object.img_name.nil? ? f.template.content_tag(:span, 'no map yet') : f.template.image_tag(f.object.img_name.url(:thumb))
+      f.input :remote_img_name_url, as: :url
     end
     f.actions
   end

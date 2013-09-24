@@ -2,7 +2,12 @@
 - if @images
   .images_all
     - @images.each do |img|
-      .image_sepr
-        %img{src: img.to_s}
-        = select_tag 'Category', options_from_collection_for_select(@categories, 'id', 'title')
-        %button.delete_img delete image
+      = form_for Image.new, url: admin_image_parser_save_data_url, method: :post do |f|
+        .image_sepr
+          %img{src: img.to_s}
+          = f.select :category_id, options_from_collection_for_select(@categories, 'id', 'title')
+          = f.text_field :title, placeholder: 'Title'
+          = f.hidden_field :remote_img_name_url, value: img.to_s
+          %button.delete_img delete image
+          = f.submit 'Save'
+

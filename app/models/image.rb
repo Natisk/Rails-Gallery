@@ -4,7 +4,7 @@ class Image < ActiveRecord::Base
 
   after_create  :user_sender
 
-  attr_accessible :title, :img_name, :category_id
+  attr_accessible :title, :img_name, :category_id, :remote_img_name_url
 
   has_many :likes, dependent: :destroy
   has_many :comments, dependent: :destroy
