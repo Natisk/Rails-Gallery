@@ -10,7 +10,7 @@ Tits::Application.routes.draw do
   ActiveAdmin.routes(self)
 
   resources :images do
-    resources :comments
+    get 'page/:page', action: :index, on: :collection
   end
 
   mount Resque::Server, at: '/resque'
