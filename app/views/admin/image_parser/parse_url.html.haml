@@ -1,6 +1,8 @@
 %h3 Parse results
 - if @images
-  %ul
+  .images_all
     - @images.each do |img|
-      %li
+      .image_sepr
         %img{src: img.to_s}
+        = select_tag 'Category', options_from_collection_for_select(@categories, 'id', 'title')
+        %button.delete_img delete image
