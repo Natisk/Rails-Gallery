@@ -23,5 +23,12 @@ $(document).ready ->
   $(document).on "click", ".overlay", ->
     $('#lightbox').hide()
 
+  $('form').bind 'ajax:success', ->
+    sel = $(this).select
+    inp_title = $(this).input
+    button = $(this).button
+    $(this).closest('.image_sepr').addClass('green')
+    sel.remove()
+
 
 
