@@ -8,7 +8,7 @@
           = f.select :category_id, options_from_collection_for_select(@categories, 'id', 'title')
           = f.text_field :title, placeholder: 'Title'
           = f.hidden_field :remote_img_name_url, value: img.to_s
-          %button.delete_img delete image
+          %button.delete_img remove
           = f.submit 'Save'
 #lightbox
   .overlay

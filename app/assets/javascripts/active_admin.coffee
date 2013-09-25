@@ -24,11 +24,10 @@ $(document).ready ->
     $('#lightbox').hide()
 
   $('form').bind 'ajax:success', ->
-    sel = $(this).select
-    inp_title = $(this).input
-    button = $(this).button
     $(this).closest('.image_sepr').addClass('green')
-    sel.remove()
+    $(this).find('select').remove()
+    $(this).find('input').remove()
+    $(this).append('<p>Image was successfully added</p>')
 
 
 
