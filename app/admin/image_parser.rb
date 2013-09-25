@@ -31,6 +31,10 @@ ActiveAdmin.register_page 'Image Parser' do
   sidebar :tips do
     ul do
       li 'Paste the url you want to parse'
+      li 'After submit you are going to see the list of images parser was able to get from the url you have pasted'
+      li 'You can save images'
+      li 'Dont forget to type image title before save'
+      li 'You can remove images before or after save'
     end
   end
 
