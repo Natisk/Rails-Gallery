@@ -4,19 +4,19 @@
   .images_all
     - @images.each do |img|
       .image_sepr
-        = form_for Image.new, url: admin_image_parser_save_data_url, method: :post, remote: true do |f|
-          = f.hidden_field :remote_img_name_url, value: img.to_s
-          .parse_img
-            %img{src: img.to_s}
-          .parse_img_title
-            = f.text_field :title, placeholder: 'Title'
-          .parse_img_cat
-            = f.select :category_id, options_from_collection_for_select(@categories, 'id', 'title')
-          .parse_action
-            = f.submit 'Save', data: {disable_with: 'wait...'}
-          .parse_remove
-            %button.delete_img remove
-
+        .parse_img
+          %img{src: img.to_s}
+        .parse_form
+          = form_for Image.new, url: admin_image_parser_save_data_url, method: :post, remote: true do |f|
+            = f.hidden_field :remote_img_name_url, value: img.to_s
+            .parse_img_title
+              = f.text_field :title, placeholder: 'Title'
+            .parse_img_cat
+              = f.select :category_id, options_from_collection_for_select(@categories, 'id', 'title')
+            .parse_action
+              = f.submit 'Save', data: {disable_with: 'wait...'}
+        .parse_remove
+          %button.delete_img remove
 #lightbox
   .overlay
   .original_img

@@ -74,6 +74,12 @@
 
 .images_all .image_sepr p {
   font-size: 18px;
+  margin: 0 0 5px 0;
+}
+
+.images_all .parse_form {
+  float: left;
+  width: 350px;
 }
 
 .images_all .parse_img {
@@ -84,13 +90,13 @@
 }
 
 .images_all .parse_img_title {
-  width: 25%;
+  width: 180px;
   margin: 0 1% 0 0;
   float: left;
 }
 
 .images_all .parse_img_cat {
-  width: 10%;
+  width: 90px;
   margin: 0 1% 0 0;
   float: left;
 }
@@ -107,7 +113,8 @@
   background: #e5fbe8;
 }
 
-.image_sepr img {
+.image_sepr .parse_img img {
   max-width: 200px;
   cursor: pointer;
+  border: 1px solid #cccccc;
 }

@@ -10,26 +10,25 @@ $(document).ready ->
     if $('#lightbox .original_img img')
       $('#lightbox .original_img img').remove()
 
-    img = new Image();
-    img.src = event.target.src
-    $('#lightbox .original_img').append(img)
+    if img = new Image()
+      img.src = event.target.src
+      $('#lightbox .original_img').append(img)
 
-    img.onload = ->
-      div_height = @height
-      div_width = @width
-      $('#lightbox .original_img').attr 'style', ('margin-top: -' + div_height/2 + 'px; margin-left: -' + div_width/2 + 'px;')
-      $('#lightbox').show()
-
+      img.onload = ->
+        div_height = @height
+        div_width = @width
+        $('#lightbox .original_img').attr 'style', ('margin-top: -' + div_height/2 + 'px; margin-left: -' + div_width/2 + 'px;')
+        $('#lightbox').show()
+#
   $(document).on "click", ".close_box", ->
     $('#lightbox').hide()
 
   $(document).on "click", ".overlay", ->
     $('#lightbox').hide()
 
-  $('form').bind 'ajax:success', ->
-    $(this).closest('.image_sepr').addClass('green')
-    $(this).find('select').remove()
-    $(this).find('input').remove()
+  $('.image_sepr').bind 'ajax:success', ->
+    $(this).find('.parse_form').remove()
+    $(this).addClass('green')
     $(this).append('<p>Image was successfully added</p>')
 
 
