@@ -26,7 +26,7 @@ ActiveAdmin.register_page 'Image Parser' do
     if image.save
       render 'admin/image_parser/parse_url'
     else
-      render nothing: true
+      render js: "alert('Image cannot be saved')", status: :error
     end
   end
 
