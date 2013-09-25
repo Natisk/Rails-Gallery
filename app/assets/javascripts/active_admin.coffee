@@ -20,6 +20,9 @@ $(document).ready ->
       $('#lightbox .original_img').attr 'style', ('margin-top: -' + div_height/2 + 'px; margin-left: -' + div_width/2 + 'px;')
       $('#lightbox').show()
 
+  $(document).on "click", ".close_box", ->
+    $('#lightbox').hide()
+
   $(document).on "click", ".overlay", ->
     $('#lightbox').hide()
 

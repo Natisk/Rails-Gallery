@@ -1,17 +1,26 @@
-%h3 Parse results
+%h3
+  = "Parse results for > #{@url}"
 - if @images
   .images_all
     - @images.each do |img|
       .image_sepr
         = form_for Image.new, url: admin_image_parser_save_data_url, method: :post, remote: true do |f|
-          %img{src: img.to_s}
-          = f.select :category_id, options_from_collection_for_select(@categories, 'id', 'title')
-          = f.text_field :title, placeholder: 'Title'
           = f.hidden_field :remote_img_name_url, value: img.to_s
-          %button.delete_img remove
-          = f.submit 'Save'
+          .parse_img
+            %img{src: img.to_s}
+          .parse_img_title
+            = f.text_field :title, placeholder: 'Title'
+          .parse_img_cat
+            = f.select :category_id, options_from_collection_for_select(@categories, 'id', 'title')
+          .parse_action
+            = f.submit 'Save', data: {disable_with: 'wait...'}
+          .parse_remove
+            %button.delete_img remove
+
 #lightbox
   .overlay
   .original_img
+    .lb_img_wrap
+      .close_box
 
 
