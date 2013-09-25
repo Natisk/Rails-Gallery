@@ -2,8 +2,8 @@
 - if @images
   .images_all
     - @images.each do |img|
-      = form_for Image.new, url: admin_image_parser_save_data_url, method: :post do |f|
-        .image_sepr
+      .image_sepr
+        = form_for Image.new, url: admin_image_parser_save_data_url, method: :post, remote: true do |f|
           %img{src: img.to_s, width: 200}
           = f.select :category_id, options_from_collection_for_select(@categories, 'id', 'title')
           = f.text_field :title, placeholder: 'Title'
