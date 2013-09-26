@@ -11,6 +11,7 @@ class CommentsController < ApplicationController
   end
 
   def create
+    Pusher['test_channel'].trigger('my_event', {message: 'hello world'})
     if user_signed_in?
       @image = Image.find(params[:image_id])
       @comment = @image.comments.new(params[:comment])
