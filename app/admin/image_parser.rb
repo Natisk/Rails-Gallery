@@ -8,8 +8,8 @@ ActiveAdmin.register_page 'Image Parser' do
     @categories = Category.all
     @url = params[:image_parser][:parse_link]
     valid_url = /^(http|https):\/\/[a-z0-9]+([\-\.]{1}[a-z0-9]+)*\.[a-z]{2,5}(:[0-9]{1,5})?(\/.*)?$/ix.match(@url).nil?
-    if valid_url == false
-      errors.add(:parse_link, 'Invalid domain name.')
+    if valid_url
+      redirect_to :back, alert: 'Invalid domain name'
     else
       page = Nokogiri::HTML(open(@url))
       page.css('img').each do |img|
@@ -20,8 +20,8 @@ ActiveAdmin.register_page 'Image Parser' do
           @images << site_root + img['src']
         end
       end
+      render 'admin/image_parser/parse_url'
     end
-    render 'admin/image_parser/parse_url'
   end
 
   page_action :save_data, method: :post do
