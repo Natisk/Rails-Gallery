@@ -291,7 +291,7 @@ DEPENDENCIES
   omniauth-facebook
   pg
   puma
-  pusher (~> 0.9.4)
+  pusher
   rails (= 3.2.13)
   rails_config
   resque
