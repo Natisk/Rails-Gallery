@@ -7,11 +7,11 @@ ActiveAdmin.register_page 'Image Parser' do
     @images = Array.new
     @categories = Category.all
     @url = params[:image_parser][:parse_link]
-    site_root = @url.split('/')[0] + '//' + @url.split('/')[2]
     valid_url = /^(http|https):\/\/[a-z0-9]+([\-\.]{1}[a-z0-9]+)*\.[a-z]{2,5}(:[0-9]{1,5})?(\/.*)?$/ix.match(@url).nil?
     if valid_url
       redirect_to :back, alert: 'Invalid domain name'
     else
+      site_root = @url.split('/')[0] + '//' + @url.split('/')[2]
       page = Nokogiri::HTML(open(@url))
       page.css('img').each do |img|
         if img['src'].include? ('http')
