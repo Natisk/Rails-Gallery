@@ -6,5 +6,5 @@ Pusher.logger = Rails.logger
 Pusher.app_id = Settings.pusher.app_id
 Pusher.key = Settings.pusher.key
 Pusher.secret = Settings.pusher.secret
-Pusher.host   = Settings.pusher.api_host
-Pusher.port   = Settings.pusher.api_port
+Pusher.host = Settings.pusher.api_host
+Pusher.port = Settings.pusher.port
