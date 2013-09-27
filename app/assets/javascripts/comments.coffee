@@ -5,7 +5,7 @@ $(document).ready ->
       $('form').submit()
       false
 
-  Pusher.host = 'localhost'
+  Pusher.host = '127.0.0.1'
   Pusher.ws_port = 3004
   Pusher.wss_port = 3004
   Pusher.port = 4567
