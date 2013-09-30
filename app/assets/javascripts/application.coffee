@@ -8,7 +8,7 @@
 
 $(document).ready ->
 
-  Pusher.host = '127.0.0.1'
+  Pusher.host = 'localhost'
   Pusher.ws_port = '3004'
   Pusher.wss_port = '3004'
   Pusher.sockjs_host = undefined

@@ -177,9 +177,9 @@ GEM
       hashie (>= 1.1.0)
     puma (2.5.1)
       rack (>= 1.1, < 2.0)
-    pusher (0.9.4)
+    pusher (0.10.0)
       multi_json (~> 1.0)
-      signature (~> 0.1.2)
+      signature (~> 0.1.4)
     rack (1.4.5)
     rack-cache (1.2)
       rack (>= 0.4)
@@ -291,7 +291,7 @@ DEPENDENCIES
   omniauth-facebook
   pg
   puma
-  pusher
+  pusher (= 0.10.0)
   rails (= 3.2.13)
   rails_config
   resque

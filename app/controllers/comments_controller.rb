@@ -11,12 +11,14 @@ class CommentsController < ApplicationController
   end
 
   def create
+    pusher = Pusher.new('c46c644b78f84661ace01b35dffceabc')
+    pusher['test_channel'].trigger('my_event', {message: 'hello world'})
     if user_signed_in?
       @image = Image.find(params[:image_id])
       @comment = @image.comments.new(params[:comment])
       @comment.user = current_user
       if @comment.save
-        Pusher['test_channel'].trigger('my_event', {message: 'hello world'})
+        #Pusher['test_channel'].trigger('my_event', {message: 'hello world'})
         redirect_to image_path(@image)
       else
         redirect_to :back, notice: 'Body minimum 2 maximum 255 symbols'
