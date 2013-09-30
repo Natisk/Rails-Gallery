@@ -16,7 +16,9 @@ class CommentsController < ApplicationController
       @comment = @image.comments.new(params[:comment])
       @comment.user = current_user
       if @comment.save
-        Pusher['test_channel'].trigger('my_event', {message: 'hello world'})
+        Pusher['test_channel'].trigger('my_event', {message: @comment, user: current_user,
+                                                    url: image_path(@image).to_s,
+                                                    img_title: @comment.image.title})
         redirect_to image_path(@image)
       else
         redirect_to :back, notice: 'Body minimum 2 maximum 255 symbols'
