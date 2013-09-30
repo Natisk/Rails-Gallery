@@ -1,21 +1,25 @@
-.for_image
-  = image_tag @image.img_name.url, id: "#{@image.id}"
-.image_likes
-  = 'Total likes - '
-  %span= @image.likes_count
-.image_comments.col-lg-4
-  - @image.comments.each do |img_comment|
-    .img_comment
-      .comment_user_name
-        = img_comment.user.name
-      .comment_body
-        = img_comment.body
-- if user_signed_in?
-  - if @image.likes.any? {|like| like[:user_id] == current_user.id}
-    #like_down.btn.btn-danger
-      DisLike
-  - else
-    #like_up.btn.btn-primary
-      Like
-  .comments_form
-    = render partial: 'comments/form'
+.row
+  .image_comments.col-lg-6
+    - @image.comments.each do |img_comment|
+      .img_comment
+        .comment_user_name
+          = img_comment.user.name
+        .comment_body
+          = img_comment.body
+  .col-lg-6.text-right
+    .for_image
+      = image_tag @image.img_name.url, id: "#{@image.id}"
+      - if user_signed_in?
+        - if @image.likes.any? {|like| like[:user_id] == current_user.id}
+          #like_down.btn.btn-danger.for_like
+            DisLike
+        - else
+          #like_up.btn.btn-primary.for_like
+            Like
+    .image_likes
+      Total likes -
+      %span= @image.likes_count
+    - if user_signed_in?
+      .comments_form
+        = render partial: 'comments/form'
+

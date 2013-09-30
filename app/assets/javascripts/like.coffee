@@ -1,5 +1,13 @@
 $(document).ready ->
 
+  $(document).on "mouseenter", ".for_image", ->
+    $(".for_like").stop(true, false).show('slow')
+    return false
+
+  $(document).on "mouseleave", ".for_image", ->
+    $(".for_like").stop(true, false).hide('slow')
+    return false
+
   $(document).on "click", "#like_up", (event) ->
     $.ajax
       type: 'post'
