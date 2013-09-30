@@ -8,10 +8,6 @@
 
 $(document).ready ->
 
-#  Pusher.host = '127.0.0.1'
-#  Pusher.ws_port = 3004
-#  Pusher.wss_port = 3004
-
   Pusher.host = '127.0.0.1'
   Pusher.ws_port = '3004'
   Pusher.wss_port = '3004'
@@ -20,11 +16,6 @@ $(document).ready ->
   Pusher.sockjs_https_port = undefined
   Pusher.sockjs_path = undefined
 
-#  Pusher.sockjs_host = undefined
-#  Pusher.sockjs_http_port = undefined
-#  Pusher.sockjs_https_port = undefined
-#  Pusher.sockjs_path = undefined
-#
 #  Pusher.stats_host = undefined
 #  Pusher.cdn_http = undefined
 #  Pusher.cdn_https = undefined
