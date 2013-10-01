@@ -13,7 +13,6 @@
         = link_to 'Catalog', root_path, class: 'navbar-brand'
         %ul.nav.navbar-nav
           = nav_link_to('Categories', categories_path, 'categories')
-          = nav_link_to('Images', images_path, 'images')
           = nav_link_to('Comments', comments_path, 'comments')
         #user_nav.pull-right
           - if user_signed_in?
