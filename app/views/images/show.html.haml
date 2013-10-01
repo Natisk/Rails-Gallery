@@ -19,8 +19,9 @@
           #like_up.btn.btn-primary.for_like
             Like
       .image_likes.btn.btn-danger
-        Total likes -
+        Total likes (
         %span= @image.likes_count
+        )
     - if user_signed_in?
       .comments_form
         = render partial: 'comments/form'

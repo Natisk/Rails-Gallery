@@ -4,7 +4,8 @@
 #= require subscribe
 #= require comments
 #= require pusher
-#= require_tree.
+#= require my_slider_script
+
 
 $(document).ready ->
 

@@ -3,5 +3,6 @@
 - unless @images.empty?
   .images_all
     - @images.each do |category_img|
-      = image_tag category_img.img_name.url(:thumb)
-= paginate @images
+      = link_to image_path(category_img) do
+        = image_tag category_img.img_name.url(:thumb)
+= paginate @images, window: 2

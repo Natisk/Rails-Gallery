@@ -1,8 +1,18 @@
 %h1 Images
 .row
-  .image_tits.col-lg-8
-    - @images.each do |img|
-      = link_to image_path(img) do
-        = image_tag img.img_name.url(:thumb)
+  .image_tits.col-lg-12
+    #gallery
+      #slides
+        - @images.each do |img|
+          .slide
+            = link_to image_path(img) do
+              = image_tag img.img_name, width: 920, height: 400
+      #menu
+        %ul
+          %li.fbar &nbsp;
+          - @images.each do |img|
+            %li.menuItem
+              %span
+                = image_tag img.img_name, width: 32, height: 32
 .pager_images
   = paginate @images, window: 2
