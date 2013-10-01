@@ -12,12 +12,13 @@ $(document).ready(function(){
 		totWidth += $(this).width();
 		
 		/* The positions array contains each slide's commulutative offset from the left part of the container */
-		
-		if(!$(this).width())
-		{
-			alert("Please, fill in width & height for all your images!");
-			return false;
-		}
+
+//      this fires alert if you didnt set images width and height
+//		if(!$(this).width())
+//		{
+//			alert("Please, fill in width & height for all your images!");
+//			return false;
+//		}
 		
 	});
 	
@@ -36,8 +37,9 @@ $(document).ready(function(){
 			
 			$('#slides').stop().animate({marginLeft:-positions[pos]+'px'},450);
 			/* Start the sliding animation */
-			
-			e.preventDefault();
+
+//          if you are using tag a to wrap your images in div#menu
+//			e.preventDefault();
 			/* Prevent the default action of the link */
 			
 			
@@ -67,7 +69,7 @@ $(document).ready(function(){
 
 	// The number of seconds that the slider will auto-advance in:
 	
-	var changeEvery = 10;
+	var changeEvery = 5;
 
 	var itvl = setInterval(function(){autoAdvance()},changeEvery*1000);
 

@@ -5,11 +5,11 @@
       #slides
         - @images.each do |img|
           .slide
-            = link_to image_path(img) do
-              = image_tag img.img_name, width: 920, height: 400
+            .pos_image
+              = link_to image_path(img) do
+                = image_tag img.img_name
       #menu
         %ul
-          %li.fbar &nbsp;
           - @images.each do |img|
             %li.menuItem
               %span
