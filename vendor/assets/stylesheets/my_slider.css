@@ -43,8 +43,8 @@
 	overflow:hidden;
 }
 
-#gallery li.inact:hover {	/
-	background:url(/assets/pic_bg.png) repeat;
+#gallery li.inact:hover {
+	background:url(/assets/pic_bg.png);
 }
 
 #gallery li.act,

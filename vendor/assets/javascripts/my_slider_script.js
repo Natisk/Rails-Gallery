@@ -1,15 +1,16 @@
 $(document).ready(function() {
 
     // The number of seconds that the slider will auto-advance in:
-    var changeEvery = 2;
+    var changeEvery = 5;
     var itvl = setInterval(function(){autoAdvance()},changeEvery*1000);
     var totWidth=0;
 	var positions = new Array();
     var current = 1;
 
     function autoAdvance() {
-        $('#menu li span').eq(current%$('#menu li span').length).trigger('click',[true]);	// [true] will be passed as the keepScroll parameter of the click function on line 28
-        current++;//
+        $('#menu li span').eq(current%$('#menu li span').length).trigger('click',[true]);
+        // [true] will be passed as the keepScroll parameter of the click function on line 28
+        current++;
     }
 
     $('#menu li.menuItem:first').addClass('act').siblings().addClass('inact');
@@ -38,7 +39,7 @@ $(document).ready(function() {
 			$(this).parent().addClass('act').removeClass('inact');
 			
 			var pos = $(this).parent().prevAll('.menuItem').length;
-			
+
 			$('#slides').stop().animate({marginLeft:-positions[pos]+'px'},450);
 
 //          if you are using tag a to wrap your images in div#menu
