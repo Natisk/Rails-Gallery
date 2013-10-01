@@ -35,7 +35,7 @@ $(document).ready(function() {
 
 	$('#menu li span').click(function(e,keepScroll) {
 			$('li.menuItem').removeClass('act').addClass('inact');
-			$(this).parent().addClass('act');
+			$(this).parent().addClass('act').removeClass('inact');
 			
 			var pos = $(this).parent().prevAll('.menuItem').length;
 			
