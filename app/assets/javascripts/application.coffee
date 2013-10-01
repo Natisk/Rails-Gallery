@@ -20,7 +20,6 @@ $(document).ready ->
   channel = pusher.subscribe('test_channel')
   channel.bind 'my_event', (data) ->
     t = new Date(data.message.created_at)
-    loc = t.toLocaleTimeString("en-US", {hour12: false})
     t_year = t.getFullYear()
     t_month = (t.getMonth()+1)
     if t_month < 10
