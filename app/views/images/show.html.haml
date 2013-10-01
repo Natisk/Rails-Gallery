@@ -1,5 +1,7 @@
 .row
   .image_comments.col-lg-6
+    %h1
+      = "Comments for #{@image.title}"
     - @image.comments.each do |img_comment|
       .img_comment
         .comment_user_name
@@ -16,9 +18,9 @@
         - else
           #like_up.btn.btn-primary.for_like
             Like
-    .image_likes
-      Total likes -
-      %span= @image.likes_count
+      .image_likes.btn.btn-danger
+        Total likes -
+        %span= @image.likes_count
     - if user_signed_in?
       .comments_form
         = render partial: 'comments/form'

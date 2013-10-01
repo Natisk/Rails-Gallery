@@ -1,12 +1,12 @@
 $(document).ready ->
 
   $(document).on "mouseenter", ".for_image", ->
-    $(".for_like").stop(false, true).show('slow')
-    #return false
+    $(".for_like, .image_likes").stop(false, true).show('slow')
+
 
   $(document).on "mouseleave", ".for_image", ->
-    $(".for_like").stop(false, true).hide('slow')
-    #return false
+    $(".for_like, .image_likes").stop(false, true).hide('slow')
+
 
   $(document).on "click", "#like_up", (event) ->
     $.ajax
