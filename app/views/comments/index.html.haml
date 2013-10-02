@@ -11,6 +11,5 @@
           .comment_image
             = link_to "#{comment.image.title}", image_path(comment.image_id)
         .comment_body
-          %pre
-            = comment.body
+          = comment.body
     = paginate @comments, window: 2

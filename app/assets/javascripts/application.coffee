@@ -35,5 +35,9 @@ $(document).ready ->
 
     comment_date = t_year + '-' + t_month + '-' + t_day + ' ' + t_hour + ':' + t_min
 
-    $('.comments_all').prepend('<div class="comment"><div class="comment_top"><div class="comment_name">' + data.user.name + '</div><div class="comment_date">' + comment_date + '</div><div class="comment_image"><a href="' + data.url + '">' + data.img_title + '</a></div></div><div class="comment_body"><pre>' + data.message.body + '</pre></div></div>')
+    $('.comments_all').prepend('<div class="comment"><div class="comment_top"><div class="comment_name">'\
+                                + data.user.name + '</div><div class="comment_date">'\
+                                + comment_date + '</div><div class="comment_image"><a href="'\
+                                + data.url + '">' + data.img_title + '</a></div></div><div class="comment_body">'\
+                                + data.message.body + '</div></div>')
 
