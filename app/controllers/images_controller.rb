@@ -1,5 +1,7 @@
 class ImagesController < ApplicationController
 
+  caches_action :index
+
   def index
     @images = Image.page(params[:page]).per(5)
   end

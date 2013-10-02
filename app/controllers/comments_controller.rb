@@ -1,6 +1,7 @@
 class CommentsController < ApplicationController
 
   before_filter :authenticate_user!, only: [:create]
+  caches_action :index
 
   def index
     @comments = Comment.order('created_at DESC').includes(:image, :user).page(params[:page]).per(10)
