@@ -35,23 +35,23 @@ $(document).ready(function() {
 	/* Change the cotnainer div's width to the exact width of all the slides combined */
 
 	$('#menu li span').click(function(e,keepScroll) {
-			$('li.menuItem').removeClass('act').addClass('inact');
-			$(this).parent().addClass('act').removeClass('inact');
-			
-			var pos = $(this).parent().prevAll('.menuItem').length;
+        $('li.menuItem').removeClass('act').addClass('inact');
+        $(this).parent().addClass('act').removeClass('inact');
 
-			$('#slides').stop().animate({marginLeft:-positions[pos]+'px'},450);
+        var pos = $(this).parent().prevAll('.menuItem').length;
 
-//          if you are using tag a to wrap your images in div#menu
-//			e.preventDefault();
-			/* Prevent the default action of the link */
-			
-			// Stopping the auto-advance if an icon has been clicked:
-			if(!keepScroll) {
-                clearInterval(itvl);
-                current = parseInt($(this).attr('id'));
-                itvl = setInterval(function(){autoAdvance()},changeEvery*1000);
-            }
+        $('#slides').stop().animate({marginLeft:-positions[pos]+'px'},450);
+
+//      if you are using tag a to wrap your images in div#menu
+//		e.preventDefault();
+        /* Prevent the default action of the link */
+
+        // Stopping the auto-advance if an icon has been clicked:
+        if(!keepScroll) {
+            clearInterval(itvl);
+            current = parseInt($(this).attr('id'));
+            itvl = setInterval(function(){autoAdvance()},changeEvery*1000);
+        }
 	});
 
 });
