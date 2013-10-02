@@ -3,12 +3,6 @@
 - unless @images.empty?
   .images_all
     #gallery
-      #slides
-        - @images.each do |img|
-          .slide
-            .pos_image
-              = link_to image_path(img) do
-                = image_tag img.img_name
       #menu
         %ul
           - count = 0
@@ -17,4 +11,11 @@
               %span{id: "#{count}"}
                 - count += 1
                 = image_tag img.img_name, width: 32, height: 32
-= paginate @images, window: 2
+      #slides
+        - @images.each do |img|
+          .slide
+            .pos_image
+              = link_to image_path(img) do
+                = image_tag img.img_name
+.pager_images
+  = paginate @images, window: 2
