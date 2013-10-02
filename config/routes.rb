@@ -16,11 +16,14 @@ Tits::Application.routes.draw do
       get 'page/:page', action: :index, on: :collection
     end
 
+    resources :comments, only: [:index] do
+      get 'page/:page', action: :index, on: :collection
+    end
+
     mount Resque::Server, at: '/resque'
 
     get 'categories' => 'categories#index'
     get 'categories/:title' => 'categories#show', as: :special_category
-    get 'comments' => 'comments#index', as: :comments
 
     post 'like-up' =>  'likes#create'
     post 'like-down' => 'likes#destroy'
