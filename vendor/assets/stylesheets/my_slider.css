@@ -16,7 +16,7 @@
 .slide {
 	float:left;
     width: 920px;
-    height: 400px;
+    height:400px;
     text-align: center;
     display: table-cell;
     vertical-align: middle;
@@ -70,6 +70,7 @@
 
 #gallery span img {
 	border:none;
+    box-shadow: 1px 1px 10px rgba(0,0,0,0.5);
 }
 
 
