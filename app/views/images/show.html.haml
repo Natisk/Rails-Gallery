@@ -28,4 +28,7 @@
     - if user_signed_in?
       .comments_form
         = render partial: 'comments/form'
-
+    -else
+      .comment_tips
+        You can leave comments and likes if you
+        = link_to 'sign in', new_user_session_path

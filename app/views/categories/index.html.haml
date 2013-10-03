@@ -12,3 +12,7 @@
           - else
             %div{id: "#{category.id}", class: 'subscribe'}
               subscribe
+    - unless current_user
+      .tips
+        You can subscribe for a certain category if you
+        = link_to 'sign in', new_user_session_path
