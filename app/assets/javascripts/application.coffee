@@ -9,15 +9,7 @@
 
 $(document).ready ->
 
-  Pusher.host = 'localhost'
-  Pusher.ws_port = '3004'
-  Pusher.wss_port = '3004'
-  Pusher.sockjs_host = undefined
-  Pusher.sockjs_http_port = undefined
-  Pusher.sockjs_https_port = undefined
-  Pusher.sockjs_path = undefined
-
-  pusher = new Pusher('c46c644b78f84661ace01b35dffceabc')
+  pusher = new Pusher('b15da0d38e1cf270a7b1')
   channel = pusher.subscribe('test_channel')
   channel.bind 'my_event', (data) ->
 
