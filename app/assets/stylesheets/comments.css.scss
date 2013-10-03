@@ -2,13 +2,13 @@
 .comment {
   border-bottom: 1px solid #cccccc;
   margin: 0 0 20px 0;
-  box-shadow: 0 0 5px rgba(0,0,0,0.5);
+  box-shadow: -2px 2px 7px rgba(0,0,0,0.5);
   border-radius: 5px 5px 5px 5px;
 }
 
 .img_comment:hover,
 .comment:hover {
-  box-shadow: 0 0 10px rgba(0,0,0,0.5);
+  box-shadow: -3px 3px 8px rgba(0,0,0,0.5);
 }
 
 .img_comment strong {
