@@ -9,6 +9,11 @@ html,
 body {
   height: 100%;
 }
+
+body {
+  overflow-y: scroll;
+}
+
 .container {
   height: 100%;
 }
@@ -56,6 +61,10 @@ footer {
 
 h1 {
   text-shadow: 2px 1px 2px rgba(0,0,0,0.5);
+}
+
+h1:first-letter {
+  text-transform: uppercase;
 }
 
 .pagination span .btn {
