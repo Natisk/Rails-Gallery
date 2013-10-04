@@ -2,6 +2,8 @@ class Comment < ActiveRecord::Base
 
   after_create :track_comment
 
+  default_scope order('created_at DESC')
+
   attr_accessible :body
 
   belongs_to :user, counter_cache: true
