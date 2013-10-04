@@ -1,18 +1,19 @@
 .row
-  .image_comments.col-lg-6
-    %h1
-      = "Comments for #{@image.title}"
-    - @comments.each do |img_comment|
-      .img_comment
-        .comment_user_name
-          %strong
-            = img_comment.user.name
-          %span
-            = img_comment.created_at.strftime('%Y-%m-%d %H:%M')
-        .comment_body
-          = img_comment.body
-  .more_comments.btn.btn-primary
-    More comments
+  .col-lg-6
+    .image_comments
+      %h1
+        = "Comments for #{@image.title}"
+      - @comments.each do |img_comment|
+        .img_comment
+          .comment_user_name
+            %strong
+              = img_comment.user.name
+            %span
+              = img_comment.created_at.strftime('%Y-%m-%d %H:%M')
+          .comment_body
+            = img_comment.body
+    .more_comments.btn.btn-primary{data: {pages: "#{@comments.total_pages}"}}
+      More comments
   .col-lg-6.text-right
     .for_image
       = image_tag @image.img_name.url, id: "#{@image.id}"
