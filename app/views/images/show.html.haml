@@ -2,7 +2,7 @@
   .image_comments.col-lg-6
     %h1
       = "Comments for #{@image.title}"
-    - @image.comments.each do |img_comment|
+    - @comments.each do |img_comment|
       .img_comment
         .comment_user_name
           %strong
