@@ -3,6 +3,7 @@
 #= require like
 #= require subscribe
 #= require comments
+#= require image
 #= require pusher
 #= require my_slider_script
 

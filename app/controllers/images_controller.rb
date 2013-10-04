@@ -7,7 +7,12 @@ class ImagesController < ApplicationController
   def show
     @image = Image.includes(:likes).find(params[:id])
     @comment = Comment.new(params[:comment])
-    @comments = Comment.includes(:user).where('image_id = :id', id: params[:id]).limit(9)
+    @comments = Comment.includes(:user).where('image_id = :id', id: params[:id]).limit(3)
+  end
+
+  def more_comments
+    comments = Comment.where('image_id = :id', id: params[:id]).order('created_at DESC').offset(3).page(params[:page]).per(3)
+    render json: comments.to_json(include: {user: {only: :name}})
   end
 
 end

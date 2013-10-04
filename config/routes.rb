@@ -29,6 +29,7 @@ Tits::Application.routes.draw do
     post 'like-down' => 'likes#destroy'
     post 'subscribe' => 'categories#subscribe'
     post 'unsubscribe' => 'categories#unsubscribe'
+    post 'more-comments' => 'images#more_comments'
 
   end
 
