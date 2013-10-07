@@ -1,9 +1,3 @@
-twoDigits = (text) ->
-  if parseInt(text) < 10
-    text = '0' + text
-  else
-    text
-
 $(document).ready ->
 
   i = 2

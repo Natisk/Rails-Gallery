@@ -7,6 +7,11 @@
 #= require pusher
 #= require my_slider_script
 
+twoDigits = (text) ->
+  if parseInt(text) < 10
+    text = '0' + text
+  else
+    text
 
 $(document).ready ->
 
@@ -29,12 +34,8 @@ $(document).ready ->
     t_hour = t.getUTCHours()
     t_month = (t.getMonth()+1)
 
-    if t_month < 10
-      t_month = '0' + t_month
-    else
-      t_month
-
-    comment_date = t_year + '-' + t_month + '-' + t_day + ' ' + t_hour + ':' + t_min
+    comment_date = t_year + '-' + twoDigits(t_month) + '-' + twoDigits(t_day) + ' '\
+                  + twoDigits(t_hour) + ':' + twoDigits(t_min)
 
     $('.comments_all').prepend('<div class="comment"><div class="comment_top"><div class="comment_name">'\
                                 + data.user.name + '</div><div class="comment_date">'\
