@@ -11,7 +11,8 @@ class ImagesController < ApplicationController
   end
 
   def more_comments
-    comments = Comment.where('image_id = :id', id: params[:id]).order('created_at DESC').offset(3).page(params[:page]).per(3)
+    comments = Comment.where('image_id = :id', id: params[:id]).order('created_at DESC')
+                            .includes(:user).offset(3).page(params[:page]).per(3)
     render json: comments.to_json(include: {user: {only: :name}})
   end
 
