@@ -1,17 +1,17 @@
 $(document).ready(function() {
 
   var changeEvery = 5;
-  var itvl = setInterval(function(){autoAdvance()},changeEvery*1000);
+  var gap = setInterval(function(){autoAdvance()},changeEvery*1000);
   var totWidth=0;
   var positions = new Array();
   var current = 1;
 
   function autoAdvance() {
-    $('#menu li span').eq(current%$('#menu li span').length).trigger('click',[true]);
+    $('#slide-nav li span').eq(current%$('#slide-nav li span').length).trigger('click',[true]);
     current++;
   }
 
-  $('#menu li.menuItem:first').addClass('act').siblings().addClass('inact');
+  $('#slide-nav li.slide-item:first').addClass('active').siblings().addClass('nonactive');
 
   $('#slides .slide').each(function(i) {
     positions[i]= totWidth;
@@ -20,18 +20,18 @@ $(document).ready(function() {
 
   $('#slides').width(totWidth);
 
-  $('#menu li span').click(function(e,keepScroll) {
-    $('li.menuItem').removeClass('act').addClass('inact');
-    $(this).parent().addClass('act').removeClass('inact');
+  $('#slide-nav li span').click(function(e,keepScroll) {
+    $('li.slide-item').removeClass('active').addClass('nonactive');
+    $(this).parent().addClass('active').removeClass('nonactive');
 
-    var pos = $(this).parent().prevAll('.menuItem').length;
+    var pos = $(this).parent().prevAll('.slide-item').length;
 
     $('#slides').stop().animate({marginLeft:-positions[pos]+'px'},450);
 
     if(!keepScroll) {
-      clearInterval(itvl);
+      clearInterval(gap);
       current = parseInt($(this).attr('id'));
-      itvl = setInterval(function(){autoAdvance()},changeEvery*1000);
+      gap = setInterval(function(){autoAdvance()},changeEvery*1000);
     }
   });
 

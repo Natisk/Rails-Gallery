@@ -2,11 +2,11 @@
 .row
   .image_tits.col-lg-12
     #gallery
-      #menu
+      #slide-nav
         %ul
           - count = 0
           - @images.each do |img|
-            %li.menuItem
+            %li.slide-item
               %span{id: "#{count}"}
                 - count += 1
                 = image_tag img.img_name, width: 32, height: 32

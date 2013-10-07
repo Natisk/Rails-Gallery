@@ -1,35 +1,35 @@
 #gallery {
-    border:1px solid white;
-    width:920px;
-    overflow:hidden;
-    margin: 0 auto;
+  border:1px solid white;
+  width:920px;
+  overflow:hidden;
+  margin: 0 auto;
 }
 
 #slides {
 	height:400px;
 	width:920px;
 	overflow:hidden;
-    display: table;
-    margin: 0 0 10px 0;
+  display: table;
+  margin: 0 0 10px 0;
 }
 
 .slide {
 	float:left;
-    width: 920px;
-    height:400px;
-    text-align: center;
-    display: table-cell;
-    vertical-align: middle;
+  width: 920px;
+  height:400px;
+  text-align: center;
+  display: table-cell;
+  vertical-align: middle;
 }
 
 .slide img {
     max-height: 400px;
 }
 
-#menu {
+#slide-nav {
 	height:45px;
-    text-align: center;
-    margin: 0 0 10px 0;
+  text-align: center;
+  margin: 0 0 10px 0;
 }
 
 #gallery ul {
@@ -45,19 +45,13 @@
 	overflow:hidden;
 }
 
-#gallery li.inact:hover {
+#gallery li.nonactive:hover {
 	background:url(/assets/pic_bg.png);
 }
 
-#gallery li.act,
-#gallery li.act:hover {
+#gallery li.active,
+#gallery li.active:hover {
 	background:url(/assets/active_bg.png) no-repeat;
-}
-
-#gallery .fbar {
-	width:2px;
-	background:url(/assets/divider.png) no-repeat right;
-    overflow: hidden;
 }
 
 #gallery li span {
@@ -65,12 +59,12 @@
 	background:url(/assets/divider.png) no-repeat right;
 	height:45px;
 	padding-top:10px;
-    cursor: pointer
+  cursor: pointer
 }
 
 #gallery span img {
 	border:none;
-    box-shadow: 1px 1px 10px rgba(0,0,0,0.5);
+  box-shadow: 1px 1px 10px rgba(0,0,0,0.5);
 }
 
 
