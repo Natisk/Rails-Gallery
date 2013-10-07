@@ -1,3 +1,9 @@
+twoDigits = (text) ->
+  if parseInt(text) < 10
+    text = '0' + text
+  else
+    text
+
 $(document).ready ->
 
   i = 2
@@ -18,8 +24,6 @@ $(document).ready ->
 
           comment = response[key]
 
-          alert comment.id
-
           t = new Date(comment.created_at)
           t_year = t.getFullYear()
           t_day = t.getDate()
@@ -27,12 +31,8 @@ $(document).ready ->
           t_hour = t.getUTCHours()
           t_month = (t.getMonth()+1)
 
-          if t_month < 10
-            t_month = '0' + t_month
-          else
-            t_month
-
-          comment_date = t_year + '-' + t_month + '-' + t_day + ' ' + t_hour + ':' + t_min
+          comment_date = t_year + '-' + twoDigits(t_month) + '-'\
+          + twoDigits(t_day) + ' ' + twoDigits(t_hour) + ':' + twoDigits(t_min)
 
           $('.image_comments').append('<div class="img_comment"><div class="comment_user_name"><strong>'\
           + comment.user.name + '</strong><span>'\
