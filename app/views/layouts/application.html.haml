@@ -10,23 +10,25 @@
   .container
     .navbar.navbar-inverse.navbar-fixed-top
       .container
-        = link_to 'Catalog', root_path, class: 'navbar-brand'
+        = link_to t('layouts.menu_main'), root_path, class: 'navbar-brand'
         %ul.nav.navbar-nav
-          = nav_link_to('Categories', categories_path, 'categories')
-          = nav_link_to('Comments', comments_path, 'comments')
+          = nav_link_to(t('layouts.menu1'), categories_path, 'categories')
+          = nav_link_to(t('layouts.menu2'), comments_path, 'comments')
         #user_nav.pull-right
           - if user_signed_in?
-            %span Signed in as
+            %span
+              = t('layouts.sign_in_as')
             %i
               %b
                 = current_user.name
-            = link_to 'Sign out', destroy_user_session_path, :method => :delete, class: 'btn btn-primary btn-small'
+            = link_to t('layouts.sign_out'), destroy_user_session_path, method: :delete, class: 'btn btn-primary btn-small'
             %span or
-            = link_to 'Edit profile', edit_user_registration_path, class: 'btn btn-primary btn-small'
+            = link_to t('layouts.edit_profile'), edit_user_registration_path, class: 'btn btn-primary btn-small'
           - else
-            = link_to 'Sign up', new_user_registration_path, class: 'btn btn-primary btn-small'
-            = link_to 'Sign in', new_user_session_path, class: 'btn btn-primary btn-small'
-            %span.facebook_login or Sign in with
+            = link_to t('layouts.sign_up'), new_user_registration_path, class: 'btn btn-primary btn-small'
+            = link_to t('layouts.sign_in'), new_user_session_path, class: 'btn btn-primary btn-small'
+            %span.facebook_login
+              = t('layouts.alt_login')
             = link_to user_omniauth_authorize_path(:facebook) do
               = image_tag 'facebook.png', with: 32
     .content.row
@@ -47,6 +49,6 @@
           = yield
     %footer
       .copy
-        = "© #{Time.now.strftime('%Y')} Natisk, Inc."
+        = "© #{Time.now.strftime('%Y')} #{t('layouts.copyright')}"
       .org
-        RoRteam
+        = t('layouts.devel')
