@@ -14,9 +14,9 @@ $(document).ready(function() {
   $('#menu li.menuItem:first').addClass('act').siblings().addClass('inact');
 
   $('#slides .slide').each(function(i) {
-		positions[i]= totWidth;
-		totWidth += $(this).width();
-	});
+    positions[i]= totWidth;
+    totWidth += $(this).width();
+  });
 
   $('#slides').width(totWidth);
 
