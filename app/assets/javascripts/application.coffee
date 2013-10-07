@@ -15,6 +15,8 @@ twoDigits = (text) ->
 
 $(document).ready ->
 
+  window.twoDigits = twoDigits
+
   Pusher.host = 'localhost'
   Pusher.ws_port = '3004'
   Pusher.wss_port = '3004'
