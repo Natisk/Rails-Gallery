@@ -1,6 +1,7 @@
 .row
   .col-lg-12
-    %h1 Categories
+    %h1
+      = t('cat.title')
   .categories_all.col-lg-3
     - @categories.each do |category|
       .category.row
@@ -8,11 +9,11 @@
         - if user_signed_in?
           - if category.subscribes.any? {|subscribe| subscribe.user_id == current_user.id}
             %div{id: "#{category.id}", class: 'unsubscribe'}
-              unsubscribe
+              = t('cat.unsub')
           - else
             %div{id: "#{category.id}", class: 'subscribe'}
-              subscribe
+              = t('cat.sub')
     - unless current_user
       .tips
-        You can subscribe for a certain category if you
-        = link_to 'sign in', new_user_session_path
+        = t('cat.subscribe')
+        = link_to t('cat.sign_in'), new_user_session_path

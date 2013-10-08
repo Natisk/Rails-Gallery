@@ -18,3 +18,20 @@ en:
     edit_profile: 'Edit profile'
     devel: 'RoRTeam'
     copyright: 'Natisk, Inc.'
+    or: 'or'
+  cat:
+    title: 'Categories'
+    subscribe: 'You can subscribe for a certain category if you'
+    sign_in: 'sign in'
+    unsub: 'unsubscribe'
+    sub: 'subscribe'
+  comments:
+    title: 'Comments'
+  images:
+    title: 'Images'
+    show_title: 'Comments for'
+    img_tips: 'You can leave comments and likes if you'
+    tot_likes: 'Total likes'
+    more_comments: 'More comments'
+    com_placehold: 'Comment'
+    leave_com: 'Create comment'

@@ -10,6 +10,6 @@
   .field.form-group
     = current_user.name
   .field.form-group
-    = f.text_area :body, class: 'form-control', rows: 4, placeholder: 'Comment'
+    = f.text_area :body, class: 'form-control', rows: 4, placeholder: t('images.com_placehold')
   .actions.form-group
-    = f.submit 'Create comment', class: 'btn btn-primary'
+    = f.submit t('images.leave_com'), class: 'btn btn-primary'

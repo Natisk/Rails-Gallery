@@ -2,7 +2,7 @@
   .col-lg-6
     .image_comments
       %h1
-        = "Comments for #{@image.title}"
+        = "#{t('images.show_title')} #{@image.title}"
       - @comments.each do |img_comment|
         .img_comment
           .comment_user_name
@@ -13,7 +13,7 @@
           .comment_body
             = img_comment.body
     .more_comments.btn.btn-primary{data: {pages: "#{@comments.total_pages}"}}
-      More comments
+      = t('images.more_comments')
   .col-lg-6.text-right
     .for_image
       = image_tag @image.img_name.url, id: "#{@image.id}"
@@ -25,7 +25,7 @@
           #like_up.btn.btn-primary.for_like
             Like
       .image_likes.btn.btn-danger
-        Total likes (
+        = "#{t('images.tot_likes')} ("
         %span= @image.likes_count
         )
     - if user_signed_in?
@@ -33,5 +33,5 @@
         = render partial: 'comments/form'
     -else
       .comment_tips
-        You can leave comments and likes if you
-        = link_to 'sign in', new_user_session_path
+        = t('images.img_tips')
+        = link_to t('cat.sign_in'), new_user_session_path

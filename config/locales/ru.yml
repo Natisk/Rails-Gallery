@@ -1,10 +1,10 @@
 ru:
   views:
     pagination:
-      first: '&laquo; Первая'
-      last: 'Последняя &raquo;'
-      previous: '&lsaquo; Предыдущая'
-      next: 'Следующая &rsaquo;'
+      first: '&laquo; Перв.'
+      last: 'Посл. &raquo;'
+      previous: '&lsaquo; Пред.'
+      next: 'След. &rsaquo;'
       truncate: '...'
   layouts:
     menu_main: 'Каталог'
@@ -18,3 +18,20 @@ ru:
     edit_profile: 'Редактировать'
     devel: 'RoRTeam'
     copyright: 'Натиск, Инк.'
+    or: 'или'
+  cat:
+    title: 'Категории'
+    subscribe: 'Вы можете подписаться на категорию если'
+    sign_in: 'войдете'
+    unsub: 'отписаться'
+    sub: 'подписаться'
+  comments:
+    title: 'Комментарии'
+  images:
+    title: 'Изображения'
+    show_title: 'Комментарии к'
+    img_tips: 'Вы можете оставлять комментарии и оценивать изображения если'
+    tot_likes: 'Понравилось'
+    more_comments: 'Еще комментарии'
+    com_placehold: 'Комментарии'
+    leave_com: 'Оставить комментарий'
