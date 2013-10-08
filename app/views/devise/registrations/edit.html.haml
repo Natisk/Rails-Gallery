@@ -1,26 +1,27 @@
-.col-lg-4
-  %h2
-    = "#{t('views.devise.edit')} #{resource_name.to_s.humanize}"
-  = form_for(resource, as: resource_name, url: registration_path(resource_name), html: {method: :put}) do |f|
-    = devise_error_messages!
-    .form-group
-      = f.email_field :email, autofocus: true, class: 'form-control', placeholder: "#{t('views.devise.email_holder')}"
-    .form-group
-      = f.text_field :name, autofocus: true, class: 'form-control', placeholder: "#{t('views.devise.email_holder')}"
-    - if devise_mapping.confirmable? && resource.pending_reconfirmation?
+.row
+  .col-lg-4
+    %h2
+      = "#{t('views.devise.edit')} #{resource_name.to_s.humanize}"
+    = form_for(resource, as: resource_name, url: registration_path(resource_name), html: {method: :put}) do |f|
+      = devise_error_messages!
       .form-group
-        = "#{t('views.devise.waiting_confirmation')} #{resource.unconfirmed_email}"
-    .form-group
-      %i
-        = t('views.devise.leave_blank')
-      %br
-      = f.password_field :password, autocomplete: 'off', class: 'form-control', placeholder: "#{t('views.devise.new_pass')}"
-    .form-group
-      = f.password_field :password_confirmation, class: 'form-control', placeholder: "#{t('views.devise.pass_confirm')}"
-    .form-group
-      = f.submit t('views.devise.update'), class: 'btn btn-default'
-  %h3
-    = t('views.devise.cancel_acc')
-  %p
-    #{button_to t('views.devise.cancel_acc'), registration_path(resource_name), data: {confirm: t('views.devise.are_you_sure')}, method: :delete, class: 'btn btn-default'}
-  = link_to t('views.devise.back'), :back
+        = f.email_field :email, autofocus: true, class: 'form-control', placeholder: "#{t('views.devise.email_holder')}"
+      .form-group
+        = f.text_field :name, autofocus: true, class: 'form-control', placeholder: "#{t('views.devise.email_holder')}"
+      - if devise_mapping.confirmable? && resource.pending_reconfirmation?
+        .form-group
+          = "#{t('views.devise.waiting_confirmation')} #{resource.unconfirmed_email}"
+      .form-group
+        %i
+          = t('views.devise.leave_blank')
+        %br
+        = f.password_field :password, autocomplete: 'off', class: 'form-control', placeholder: "#{t('views.devise.new_pass')}"
+      .form-group
+        = f.password_field :password_confirmation, class: 'form-control', placeholder: "#{t('views.devise.pass_confirm')}"
+      .form-group
+        = f.submit t('views.devise.update'), class: 'btn btn-default'
+    %h3
+      = t('views.devise.cancel_acc')
+    %p
+      #{button_to t('views.devise.cancel_acc'), registration_path(resource_name), data: {confirm: t('views.devise.are_you_sure')}, method: :delete, class: 'btn btn-default'}
+    = link_to t('views.devise.back'), :back

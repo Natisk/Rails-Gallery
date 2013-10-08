@@ -1,14 +1,15 @@
-.col-lg-4
-  %h2
-    = t('views.layouts.sign_up')
-  = form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f|
-    = devise_error_messages!
-    .form-group
-      = f.email_field :email, autofocus: true, class: 'form-control', placeholder: "#{t('views.devise.email_holder')}"
-    .form-group
-      = f.password_field :password, class: 'form-control', placeholder: "#{t('views.devise.pass_holder')}"
-    .form-group
-      = f.password_field :password_confirmation, class: 'form-control', placeholder: "#{t('views.devise.pass_confirm')}"
-    .form-group
-      = f.submit t('views.layouts.sign_up'), class: 'btn btn-default'
-  = render 'devise/shared/links'
+.row
+  .col-lg-4
+    %h2
+      = t('layouts.sign_up')
+    = form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f|
+      = devise_error_messages!
+      .form-group
+        = f.email_field :email, autofocus: true, class: 'form-control', placeholder: "#{t('views.devise.email_holder')}"
+      .form-group
+        = f.password_field :password, class: 'form-control', placeholder: "#{t('views.devise.pass_holder')}"
+      .form-group
+        = f.password_field :password_confirmation, class: 'form-control', placeholder: "#{t('views.devise.pass_confirm')}"
+      .form-group
+        = f.submit t('layouts.sign_up'), class: 'btn btn-default'
+    = render 'devise/shared/links'

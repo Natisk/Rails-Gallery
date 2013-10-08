@@ -1,17 +1,18 @@
-.col-lg-4
-  %h2
-    = t('layouts.sign_in')
-  = form_for(resource, as: resource_name, url: session_path(resource_name)) do |f|
-    .form-group
-      = f.email_field :email, autofocus: true, class: 'form-control', placeholder: "#{t('views.devise.email_holder')}"
-    .form-group
-      = f.password_field :password, class: 'form-control', placeholder: "#{t('views.devise.pass_holder')}"
-    - if devise_mapping.rememberable?
-      .form-group.checkbox
-        %label
-          = f.check_box :remember_me
-          %span
-            = t('views.devise.remember')
-    .form-group
-      = f.submit t('layouts.sign_in'), class: 'btn btn-default'
-  = render 'devise/shared/links'
+.row
+  .col-lg-4
+    %h2
+      = t('layouts.sign_in')
+    = form_for(resource, as: resource_name, url: session_path(resource_name)) do |f|
+      .form-group
+        = f.email_field :email, autofocus: true, class: 'form-control', placeholder: "#{t('views.devise.email_holder')}"
+      .form-group
+        = f.password_field :password, class: 'form-control', placeholder: "#{t('views.devise.pass_holder')}"
+      - if devise_mapping.rememberable?
+        .form-group.checkbox
+          %label
+            = f.check_box :remember_me
+            %span
+              = t('views.devise.remember')
+      .form-group
+        = f.submit t('layouts.sign_in'), class: 'btn btn-default'
+    = render 'devise/shared/links'
