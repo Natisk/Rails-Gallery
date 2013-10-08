@@ -18,6 +18,7 @@ gem 'carrierwave'
 gem 'rmagick', '~>2.13.2', require: 'RMagick'
 gem 'resque', require: 'resque/server'
 gem 'omniauth-facebook'
+gem 'globalize3'
 
 group :development do
   gem 'binding_of_caller'
