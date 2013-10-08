@@ -20,6 +20,7 @@ en:
       truncate: '...'
     devise:
       resend: 'Resend confirmation instructions'
+      resend_unlock: 'Resend unlock instructions'
       welcome: 'Welcome'
       hello: 'Hello'
       email_text: 'You can confirm your account email through the link below:'
@@ -31,6 +32,23 @@ en:
       text_acc_block: 'Your account has been locked due to an excessive number of unsuccessful sign in attempts.'
       text_click_link: 'Click the link below to unlock your account:'
       unlock_acc: 'Unlock my account'
+      change_your_pass: 'Change your password'
+      new_pass: 'New password'
+      pass_confirm: 'Password confirmation'
+      forgot_pass: 'Forgot your password?'
+      email_holder: 'Email'
+      pass_holder: 'Password'
+      send_me_instruct: 'Send me reset password instructions'
+      edit: 'Edit'
+      waiting_confirmation: 'Currently waiting confirmation for:'
+      leave_blank: "(leave blank if you don't want to change it)"
+      update: 'Update'
+      cancel_acc: 'Cancel my account'
+      are_you_sure: 'Are you sure?'
+      back: 'Back'
+      remember: 'Remember me'
+      receive_no_conf: "Didn't receive confirmation instructions?"
+      receive_no_unlock: "Didn't receive unlock instructions?"
   layouts:
     menu_main: 'Catalog'
     menu1: 'Categories'
@@ -39,7 +57,7 @@ en:
     sign_out: 'Sign out'
     sign_in: 'Sign in'
     sign_up: 'Sign up'
-    alt_login: 'or Sign in with'
+    alt_login: 'Sign in with'
     edit_profile: 'Edit profile'
     devel: 'RoRTeam'
     copyright: 'Natisk, Inc.'

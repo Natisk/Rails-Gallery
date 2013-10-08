@@ -29,7 +29,7 @@
             = link_to t('layouts.sign_up'), new_user_registration_path, class: 'btn btn-primary btn-small'
             = link_to t('layouts.sign_in'), new_user_session_path, class: 'btn btn-primary btn-small'
             %span.facebook_login
-              = t('layouts.alt_login')
+              = "#{t('layouts.or')} #{t('layouts.alt_login')}"
             = link_to user_omniauth_authorize_path(:facebook) do
               = image_tag 'facebook.png', with: 32
     .content.row

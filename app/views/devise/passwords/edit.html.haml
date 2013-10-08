@@ -1,12 +1,13 @@
 .col-lg-4
-  %h2 Change your password
+  %h2
+    = t('views.devise.change_your_pass')
   = form_for(resource, as: resource_name, url: password_path(resource_name), html: {method: :put}) do |f|
     = devise_error_messages!
     = f.hidden_field :reset_password_token
     .form-group
-      = f.password_field :password, autofocus: true, class: 'form-control', placeholder: 'New password'
+      = f.password_field :password, autofocus: true, class: 'form-control', placeholder: "#{t('views.devise.new_pass')}"
     .form-group
-      = f.password_field :password_confirmation, class: 'form-control', placeholder: 'Password confirmation'
+      = f.password_field :password_confirmation, class: 'form-control', placeholder: "#{t('views.devise.pass_confirm')}"
     .form-group
-      = f.submit 'Change my password', class: 'btn btn-default'
+      = f.submit t('views.devise.change_pass'), class: 'btn btn-default'
   = render 'devise/shared/links'

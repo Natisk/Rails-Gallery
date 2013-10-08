@@ -1,9 +1,10 @@
 .col-lg-4
-  %h2 Forgot your password?
+  %h2
+    = t('views.devise.forgot_pass')
   = form_for(resource, as: resource_name, url: password_path(resource_name), html: {method: :post}) do |f|
     = devise_error_messages!
     .form-group
-      = f.email_field :email, autofocus: true, class: 'form-control', placeholder: 'Email'
+      = f.email_field :email, autofocus: true, class: 'form-control', placeholder: "#{t('views.devise.email_holder')}"
     .form-group
-      = f.submit 'Send me reset password instructions', class: 'btn btn-default'
+      = f.submit t('views.devise.send_me_instruct'), class: 'btn btn-default'
   = render 'devise/shared/links'
