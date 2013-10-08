@@ -12,8 +12,9 @@
               = img_comment.created_at.strftime('%Y-%m-%d %H:%M')
           .comment_body
             = img_comment.body
-    .more_comments.btn.btn-primary{data: {pages: "#{@comments.total_pages}"}}
-      = t('images.more_comments')
+    - if @comments.total_pages > 1
+      .more_comments.btn.btn-primary{data: {pages: "#{@comments.total_pages}"}}
+        = t('images.more_comments')
   .col-lg-6.text-right
     .for_image
       = image_tag @image.img_name.url, id: "#{@image.id}"

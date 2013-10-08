@@ -1,4 +1,16 @@
 en:
+  activerecord:
+    errors:
+      models:
+        user:
+          attributes:
+            email:
+              invalid: 'Enter correct email'
+              blank: 'cannot be blank'
+            password:
+              blank: 'cannot be blank'
+              confirmation: 'doesnt match'
+              too_short: 'is too short - 8 symbols min'
   views:
     pagination:
       first: '&laquo; First'

@@ -1,4 +1,16 @@
 ru:
+  activerecord:
+    errors:
+      models:
+        user:
+          attributes:
+            email:
+              invalid: 'Введите пожалуйста адрес электронной почты'
+              blank: 'не может быть пустым'
+            password:
+              blank: 'не может быть пустым'
+              confirmation: 'не совпадает'
+              too_short: 'слишком короткий - 8 символов минимум'
   views:
     pagination:
       first: '&laquo; Перв.'
