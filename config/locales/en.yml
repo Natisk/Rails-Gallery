@@ -18,6 +18,19 @@ en:
       previous: '&lsaquo; Prev'
       next: 'Next &rsaquo;'
       truncate: '...'
+    devise:
+      resend: 'Resend confirmation instructions'
+      welcome: 'Welcome'
+      hello: 'Hello'
+      email_text: 'You can confirm your account email through the link below:'
+      conf_acc: 'Confirm my account'
+      text_someone: 'Someone has requested a link to change your password. You can do this through the link below.'
+      change_pass: 'Change my password'
+      text_if_you: "If you didn't request this, please ignore this email."
+      text_your_pass: "Your password won't change until you access the link above and create a new one."
+      text_acc_block: 'Your account has been locked due to an excessive number of unsuccessful sign in attempts.'
+      text_click_link: 'Click the link below to unlock your account:'
+      unlock_acc: 'Unlock my account'
   layouts:
     menu_main: 'Catalog'
     menu1: 'Categories'
