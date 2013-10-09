@@ -5,14 +5,14 @@
   .categories_all.col-lg-3
     - @categories.each do |category|
       .category.row
-        = link_to category.title, special_category_path(category.title), class: 'btn btn-primary categories col-lg-12'
+        = link_to category.title, category_path(category), class: 'btn btn-primary categories col-lg-12'
         - if user_signed_in?
           - if category.subscribes.any? {|subscribe| subscribe.user_id == current_user.id}
             %div{id: "#{category.id}", class: 'unsubscribe'}
-              = t('cat.unsub')
+              unsubscribe
           - else
             %div{id: "#{category.id}", class: 'subscribe'}
-              = t('cat.sub')
+              subscribe
     - unless current_user
       .tips
         = t('cat.subscribe')

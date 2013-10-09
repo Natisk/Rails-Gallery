@@ -22,8 +22,10 @@ Tits::Application.routes.draw do
 
     mount Resque::Server, at: '/resque'
 
-    get 'categories' => 'categories#index'
-    get 'categories/:title' => 'categories#show', as: :special_category
+    #get 'categories/:title' => 'categories#show', as: :special_category
+    resources :categories, only: [:index, :show] do
+
+    end
 
     post 'like-up' =>  'likes#create'
     post 'like-down' => 'likes#destroy'

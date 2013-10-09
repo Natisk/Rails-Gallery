@@ -1,12 +1,15 @@
 class CategoriesController < ApplicationController
 
   def index
-    @categories = Category.includes(:images).order('created_at DESC')
+    @categories = Category.order('created_at DESC')
+    #@categories = Category.includes(:images).order('created_at DESC')
   end
 
   def show
-    @category = Category.where('title = :title', title: params[:title]).first
-    @images = Image.where('category_id = :id', id: @category.id).page(params[:page]).per(5)
+    #@category = Category.where('title = :title', title: params[:title]).first
+    @category = Category.find(params[:id])
+    #@images = Image.where('category_id = :id', id: @category.id).page(params[:page]).per(5)
+    @images = @category.images.page(params[:page]).per(5)
   end
 
   def subscribe
