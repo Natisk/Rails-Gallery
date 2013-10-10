@@ -28,5 +28,4 @@ Tits::Application.routes.draw do
   post 'unsubscribe' => 'categories#unsubscribe'
   post 'more-comments' => 'images#more_comments'
 
-
 end
