@@ -70,3 +70,27 @@ h1:first-letter {
 .pagination span .btn {
   box-shadow: -2px 2px 5px rgba(0,0,0,0.5);
 }
+
+.flag {
+  background:url(flags.png) no-repeat
+}
+
+.flag.flag-gb {
+  background-position: -25px 0
+}
+
+.flag.flag-ru {
+  background-position: 0 -15px
+}
+
+.language {
+  margin: 17px 0 0 17px;
+  width: 80px;
+}
+
+.language a {
+  display: block;
+  height: 15px;
+  line-height: 15px;
+  padding: 0 0 0 27px;
+}

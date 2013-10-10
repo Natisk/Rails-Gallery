@@ -173,6 +173,14 @@ ActiveAdmin.setup do |config|
   #     end
   #   end
 
+  config.namespace :admin do |admin|
+    admin.build_menu :utility_navigation do |menu|
+      menu.add label: 'russian', url: '?locale=ru'
+      menu.add label: 'english', url: '?locale=en'
+      admin.add_logout_button_to_menu menu
+    end
+  end
+
   # == Download Links
   #
   # You can disable download links on resource listing pages,

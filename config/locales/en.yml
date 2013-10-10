@@ -78,3 +78,6 @@ en:
     more_comments: 'More comments'
     com_placehold: 'Comment'
     leave_com: 'Create comment'
+  time:
+    formats:
+      long: "%Y-%d-%m at %H:%M"

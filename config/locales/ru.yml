@@ -78,3 +78,6 @@ ru:
     more_comments: 'Еще комментарии'
     com_placehold: 'Комментарии'
     leave_com: 'Оставить комментарий'
+  time:
+    formats:
+      long: "%Y-%d-%m в %H:%M"

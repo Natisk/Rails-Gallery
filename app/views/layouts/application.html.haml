@@ -14,6 +14,13 @@
         %ul.nav.navbar-nav
           = nav_link_to(t('layouts.menu1'), categories_path, 'categories')
           = nav_link_to(t('layouts.menu2'), comments_path, 'comments')
+        .language.pull-right
+          - if I18n.locale == I18n.default_locale
+            .flag.flag-ru
+              = link_to 'Russian', locale: 'ru'
+          - else
+            .flag.flag-gb
+              = link_to 'English', locale: 'en'
         #user_nav.pull-right
           - if user_signed_in?
             %span
