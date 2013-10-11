@@ -39,8 +39,9 @@ group :assets do
 end
 
 group :test do
+  gem 'cucumber-rails', require: false
   gem 'database_cleaner'
-  gem "selenium-webdriver", '~> 2.34.0'
+  gem 'selenium-webdriver', '~> 2.34.0'
   gem 'simplecov', require: false, group: :test
 end
 
