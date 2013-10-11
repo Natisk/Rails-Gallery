@@ -29,8 +29,6 @@ end
 group :development, :test do
   gem 'rspec-rails', '~> 2.0'
   gem 'factory_girl_rails'
-  gem 'minitest-rails-shoulda'
-  gem 'minitest-reporters', '>= 0.8.0'
 end
 
 group :assets do
@@ -41,7 +39,7 @@ end
 
 group :test do
   gem 'database_cleaner'
-  gem "selenium-webdriver", '~> 2.35.1'
+  gem 'selenium-webdriver', '~> 2.35.1'
   gem 'simplecov', require: false, group: :test
 end
 
