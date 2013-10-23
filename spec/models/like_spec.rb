@@ -1,3 +1,14 @@
+# == Schema Information
+#
+# Table name: likes
+#
+#  id         :integer          not null, primary key
+#  user_id    :integer
+#  image_id   :integer
+#  created_at :datetime         not null
+#  updated_at :datetime         not null
+#
+
 require 'spec_helper'
 
 describe Like do
@@ -9,8 +20,13 @@ describe Like do
     it {should allow_mass_assignment_of(:image_id)}
   end
 
-  context 'hooks for likes' do
-
+  it 'hooks for likes' do
+    like_img = FactoryGirl.create(:image)
+    like_user = FactoryGirl.create(:user)
+    like = like_user.likes.new(image_id: like_img.id)
+    events = Event.all
+    like.save
+    #events.count.should eq(1)
   end
 
 end

@@ -1,3 +1,14 @@
+# == Schema Information
+#
+# Table name: events
+#
+#  id          :integer          not null, primary key
+#  user_id     :integer
+#  user_action :string(255)
+#  related_id  :integer
+#  created_at  :datetime
+#
+
 require 'spec_helper'
 
 describe Event do
