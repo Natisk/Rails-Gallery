@@ -1,6 +1,6 @@
 require 'spec_helper'
 
-describe Comment do
+describe Event do
 
   context 'event test' do
     it {should belong_to(:user)}
