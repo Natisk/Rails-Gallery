@@ -20,18 +20,26 @@ describe Like do
     it {should allow_mass_assignment_of(:image_id)}
   end
 
-  it 'hooks for likes' do
-    like_img = FactoryGirl.create(:image)
-    like_user = FactoryGirl.create(:user)
-    like = like_user.likes.new(image_id: like_img.id)
-    like.user_id = like_user.id
-    like.save
-    events = Event.all
-    events.count.should eq(1)
-    dislike = like_user.likes.first
-    dislike.destroy
-    events = Event.all
-    events.count.should eq(2)
+  describe 'add and remove likes' do
+    before(:each) do
+      like_img = FactoryGirl.create(:image)
+      @like_user = FactoryGirl.create(:user)
+      @like = @like_user.likes.new(image_id: like_img.id)
+    end
+
+    it 'add like' do
+      @like.user_id = @like_user.id
+      @like.save
+      events = Event.all
+      events.count.should eq(1)
+    end
+
+    it 'remove like' do
+      dislike = @like_user.likes.first
+      dislike.destroy
+      events = Event.all
+      events.count.should eq(1)
+    end
   end
 
 end
