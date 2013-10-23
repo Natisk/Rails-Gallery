@@ -24,9 +24,14 @@ describe Like do
     like_img = FactoryGirl.create(:image)
     like_user = FactoryGirl.create(:user)
     like = like_user.likes.new(image_id: like_img.id)
-    events = Event.all
+    like.user_id = like_user.id
     like.save
-    #events.count.should eq(1)
+    events = Event.all
+    events.count.should eq(1)
+    dislike = like_user.likes.first
+    dislike.destroy
+    events = Event.all
+    events.count.should eq(2)
   end
 
 end
