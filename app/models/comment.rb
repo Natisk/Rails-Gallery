@@ -4,7 +4,7 @@ class Comment < ActiveRecord::Base
 
   default_scope order('created_at DESC')
 
-  attr_accessible :body
+  attr_accessible :body, :image_id
 
   belongs_to :user, counter_cache: true
   belongs_to :image, counter_cache: true
