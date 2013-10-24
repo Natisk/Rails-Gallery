@@ -15,10 +15,8 @@ describe Image do
     it {should allow_mass_assignment_of(:remote_img_name_url)}
 
     it 'create an Image' do
-      image = FactoryGirl.create(:image)
-      expect do
-        Image.create(image)
-      end.to change(Image, :count).by(1)
+      FactoryGirl.create(:image)
+      Image.count.should eq(1)
     end
   end
 
