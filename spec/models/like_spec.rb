@@ -30,15 +30,13 @@ describe Like do
     it 'add like' do
       @like.user_id = @like_user.id
       @like.save
-      events = Event.all
-      events.count.should eq(1)
+      Event.count.should eq(1)
     end
 
     it 'remove like' do
       dislike = @like_user.likes.first
       dislike.destroy
-      events = Event.all
-      events.count.should eq(1)
+      Event.count.should eq(1)
     end
   end
 
