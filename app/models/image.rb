@@ -1,3 +1,17 @@
+# == Schema Information
+#
+# Table name: images
+#
+#  id             :integer          not null, primary key
+#  title          :string(255)
+#  img_name       :string(255)
+#  category_id    :integer
+#  comments_count :integer          default(0)
+#  likes_count    :integer          default(0)
+#  created_at     :datetime         not null
+#  updated_at     :datetime         not null
+#
+
 class Image < ActiveRecord::Base
 
   mount_uploader :img_name, ImageUploader

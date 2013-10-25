@@ -4,7 +4,6 @@ class PusherController < ApplicationController
 
   def auth
     if current_user
-      # Refer to http://pusher.com/docs/authenticating_users for SSD
       response = Pusher[params[:channel_name]].authenticate(params[:socket_id])
       render json: response
     else

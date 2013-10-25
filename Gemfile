@@ -19,6 +19,7 @@ gem 'rmagick', '~>2.13.2', require: 'RMagick'
 gem 'resque', require: 'resque/server'
 gem 'omniauth-facebook'
 gem 'globalize3'
+gem 'annotate', '>=2.5.0'
 
 group :development do
   gem 'binding_of_caller'
@@ -27,9 +28,9 @@ group :development do
 end
 
 group :development, :test do
+  gem 'rspec-rails', '~> 2.0'
   gem 'factory_girl_rails'
-  gem 'minitest-rails-shoulda'
-  gem 'minitest-reporters', '>= 0.8.0'
+  gem 'shoulda-matchers'
 end
 
 group :assets do
@@ -40,7 +41,7 @@ end
 
 group :test do
   gem 'database_cleaner'
-  gem "selenium-webdriver", '~> 2.34.0'
+  gem 'selenium-webdriver', '~> 2.35.1'
   gem 'simplecov', require: false, group: :test
 end
 
