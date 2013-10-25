@@ -25,7 +25,7 @@ class Comment < ActiveRecord::Base
   validates :user_id, presence: true, numericality: {only_integer: true, greater_than: 0}
 
   def track_comment
-    Event.create(user_id: self.user.id , related_id: self.image.id, user_action: 'comment add')
+    Event.create(user_id: self.user_id , related_id: self.image_id, user_action: 'comment add')
   end
 
 end

@@ -7,10 +7,6 @@ class CommentsController < ApplicationController
     @comments = Comment.order('created_at DESC').includes(:image, :user).page(params[:page]).per(10)
   end
 
-  def show
-    @comment = Comment.find(params[:id])
-  end
-
   def create
     if user_signed_in?
       @image = Image.find(params[:image_id])
