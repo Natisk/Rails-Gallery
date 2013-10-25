@@ -26,14 +26,13 @@ describe CategoriesController do
 
   context 'subscribe test' do
     it 'should subscribe for a category' do
-      category = FactoryGirl.create(:category)
       user = FactoryGirl.create(:user)
       sign_in user
-      post :subscribe, category_id: category, user_id: user
+      post :subscribe, category_id: @category, user_id: user
       event = Event.all
       Event.count.should eq(1)
       event.first.user_action.should eq('subscribed')
-      post :unsubscribe, category_id: category, user_id: user
+      post :unsubscribe, category_id: @category, user_id: user
       event = Event.all
       Event.count.should eq(2)
       event.last.user_action.should eq('unsubscribed')
