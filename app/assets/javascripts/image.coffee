@@ -28,7 +28,9 @@ $(document).ready ->
           comment_date = t_year + '-' + twoDigits(t_month) + '-'\
           + twoDigits(t_day) + ' ' + twoDigits(t_hour) + ':' + twoDigits(t_min)
 
-          $('.image_comments').append('<div class="img_comment"><div class="comment_user_name"><strong>'\
+          $('.image_comments').append('<div class="img_comment loaded_comment"><div class="comment_user_name"><strong>'\
           + comment.user.name + '</strong><span>'\
           + comment_date + '</span></div><div class="comment_body">'\
           + comment.body + '</div></div>')
+
+          $('.loaded_comment').show('slow')
