@@ -29,17 +29,15 @@ describe ImagesController do
       assert_template layout: 'layouts/application'
       assert_response :success
       assigns(:image).should eq(Image.last)
-      assigns(:comments).include?(Comment.where('image_id = :id', id: @image)).should be true
+      assigns(:comments).include?(Comment.where('image_id = :id', id: Image.first.id)).should be true
     end
   end
 
   context 'more comments' do
     it 'should load more comments' do
-      post :more_comments, image_id: Image.first, format: :json
-      js_resp = (JSON.parse(response.body))[0]
-      puts js_resp.class
-      puts Comment.first.body
-      puts Comment.count
+      post :more_comments, id: Image.first.id, page: 2, format: :json
+      js_resp = (JSON.parse(response.body.to_s))[0]
+      puts js_resp
       assert_response :success
     end
   end
