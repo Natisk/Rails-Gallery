@@ -25,7 +25,7 @@ describe CategoriesController do
   end
 
   context 'subscribe test' do
-    it 'should subscribe for a category' do
+    it 'should subscribe for a category and unsubscribe' do
       user = FactoryGirl.create(:user)
       sign_in user
       post :subscribe, category_id: @category, user_id: user
