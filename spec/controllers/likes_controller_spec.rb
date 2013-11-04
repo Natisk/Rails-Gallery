@@ -10,8 +10,8 @@ describe LikesController do
   context 'create like' do
     it 'should create a like' do
       sign_in @user
-      like_img = @user.likes.create(image_id: @image.id)
-      like_img.count.should eq(1)
+      post :create, image_id: @image.id
+      Like.count.should be 1
     end
   end
 

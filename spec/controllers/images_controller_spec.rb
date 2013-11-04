@@ -6,9 +6,9 @@ describe ImagesController do
     user = FactoryGirl.create(:user)
     @category = FactoryGirl.create(:category)
     @image = @category.images.create(title: 'My image', img_name: File.open(File.join(Rails.root, 'spec',
-                                                                                                   'factories',
-                                                                                                   'files',
-                                                                                                   'rails.png')))
+                                                                                                  'factories',
+                                                                                                  'files',
+                                                                                                  'rails.png')))
     4.times{user.comments.create(body: 'nice comment', image_id: @image)}
     @comments = @image.comments
   end
@@ -29,7 +29,7 @@ describe ImagesController do
       assert_template layout: 'layouts/application'
       assert_response :success
       assigns(:image).should eq(Image.last)
-      assigns(:comments).include?(Comment.where('image_id = :id', id: Image.first.id)).should be true
+      assigns(:comments).include?(Comment.where('image_id = :id', id: @category.images.first.id).first).should be true
     end
   end
 
