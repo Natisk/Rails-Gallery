@@ -5,7 +5,7 @@
 #= require comments
 #= require image
 #= require pusher
-#= require my_slider_script
+#= require slider/my_slider_script
 
 twoDigits = (text) ->
   if parseInt(text) < 10
@@ -44,4 +44,3 @@ $(document).ready ->
                                 + comment_date + '</div><div class="comment_image"><a href="'\
                                 + data.url + '">' + data.img_title + '</a></div></div><div class="comment_body">'\
                                 + data.message.body + '</div></div>')
-
