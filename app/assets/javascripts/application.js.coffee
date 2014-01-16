@@ -32,8 +32,8 @@ $(document).ready ->
 
   pusher = new Pusher('b15da0d38e1cf270a7b1')
   channel = pusher.subscribe('test_channel')
-  channel.bind 'my_event', (data) ->
 
+  channel.bind 'my_event', (data) ->
     t = new Date(data.message.created_at)
     t_year = t.getFullYear()
     t_day = t.getDate()
@@ -44,8 +44,10 @@ $(document).ready ->
     comment_date = t_year + '-' + twoDigits(t_month) + '-' + twoDigits(t_day) + ' '\
                   + twoDigits(t_hour) + ':' + twoDigits(t_min)
 
-    $('.comments_all').prepend('<div class="comment"><div class="comment_top"><div class="comment_name">'\
-                                + data.user.name + '</div><div class="comment_date">'\
-                                + comment_date + '</div><div class="comment_image"><a href="'\
-                                + data.url + '">' + data.img_title + '</a></div></div><div class="comment_body">'\
-                                + data.message.body + '</div></div>')
+    patr1 = /(page)/
+    if !window.location.href.match(patr1)
+      $('.comments_all').prepend('<div class="comment"><div class="comment_top"><div class="comment_name">'\
+                                  + data.user.name + '</div><div class="comment_date">'\
+                                  + comment_date + '</div><div class="comment_image"><a href="'\
+                                  + data.url + '">' + data.img_title + '</a></div></div><div class="comment_body">'\
+                                  + data.message.body + '</div></div>')
